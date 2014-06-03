@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "debug": "node debug app.js"
+    "debug": "node debug app.js",
+    "test": "mocha test"
   },
   "main": "app.js",
   "repository": "",
