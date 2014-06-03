@@ -1,2 +1,7 @@
 # processor
 ### a Sails application
+
+app:	 54.200.1.122:1337
+jenkins: 54.187.21.48:8080
+sonar:   54.201.77.58:9000	admin/admin
+mongo:	 54.187.141.162
