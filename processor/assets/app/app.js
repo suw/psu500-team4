@@ -10,13 +10,21 @@ marketApp.config( [
         $routeProvider,
         $locationProvider
     ) {
-        $locationProvider.html5Mode(true);
+        $locationProvider
+            .html5Mode(false)
+            .hashPrefix('!');
         $routeProvider
         .when('/:articleId?',
         {
             controller: 'ViewFrontPageController',
             templateUrl: 'app/views/frontpage.html'
         })
+        .when('/view/:articleId?',
+        {
+            controller: 'ViewFrontPageController',
+            templateUrl: 'app/views/frontpage.html'
+        })
+
         .otherwise(
             { redirectTo: '/' }
         );
