@@ -14,17 +14,11 @@ marketApp.config( [
             .html5Mode(false)
             .hashPrefix('!');
         $routeProvider
-        .when('/:articleId?',
+        .when('/',
         {
             controller: 'ViewFrontPageController',
             templateUrl: 'app/views/frontpage.html'
         })
-        .when('/view/:articleId?',
-        {
-            controller: 'ViewFrontPageController',
-            templateUrl: 'app/views/frontpage.html'
-        })
-
         .otherwise(
             { redirectTo: '/' }
         );
