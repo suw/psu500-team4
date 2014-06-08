@@ -34,17 +34,17 @@ Article unique identifier
 describe('Database',function(){
 	describe('NewsText',function(){
 		it('should contain data for 2 years back for NewsText', function(){
-			var time = Date.now();
+			var time = "";
 			var NewsTextTime = Date.now();
 			assert.equal(time,NewsTextTime);
-		})
+		})                                     
 	})
 })
 //should contain the following data for 2 years back from the day the process started: News source
 describe('Database',function(){
 	describe('NewsSource',function(){
 		it('should contain data for 2 years back for NewsSource', function(){
-			var time = Date.now();
+			var time = "";
 			var NewsSourceTime = Date.now();
 			assert.equal(time,NewsSourceTime);
 		})
@@ -55,7 +55,7 @@ describe('Database',function(){
 describe('Database',function(){
 	describe('NewsHeadline',function(){
 		it('should contain data for 2 years back for NewsHeadline', function(){
-			var time = Date.now();
+			var time = "";
 			var NewsHeadlineTime = Date.now();
 			assert.equal(time,NewsHeadlineTime);
 		})
@@ -66,7 +66,7 @@ describe('Database',function(){
 describe('Database',function(){
 	describe('NewsTime',function(){
 		it('should contain data for 2 years back for NewsTime', function(){
-			var time = Date.now();
+			var time = "";
 			var NewsTime = Date.now();
 			assert.equal(time,NewsTime);
 		})
@@ -77,7 +77,7 @@ describe('Database',function(){
 describe('Database',function(){
 	describe('NewsDate',function(){
 		it('should contain data for 2 years back for NewsDate', function(){
-			var time = Date.now();
+			var time = "";
 			var NewsDateTime = Date.now();
 			assert.equal(time,NewsDateTime);
 		})
@@ -88,7 +88,7 @@ describe('Database',function(){
 describe('Database',function(){
 	describe('AUID',function(){
 		it('should contain data for 2 years back for AUID', function(){
-			var time = Date.now();
+			var time = "";
 			var NewsAUIDTime = Date.now();
 			assert.equal(time,NewsAUIDTime);
 		})
@@ -110,7 +110,7 @@ Article unique identifier
 describe('Database',function(){
 	describe('Timestamp',function(){
 		it('should contain, for each processed article: Timestamp of processing', function(){
-			var processedArticle = "";
+			var processedArticle = "1";
 			var Timestamp = "";
 			assert.equal(processedArticle,Timestamp);
 		})
@@ -121,7 +121,7 @@ describe('Database',function(){
 describe('Database',function(){
 	describe('Output',function(){
 		it('should contain, for each processed article: Output of API', function(){
-			var processedArticle = "";
+			var processedArticle = "1";
 			var OutputOfAPI = "";
 			assert.equal(processedArticle,OutputOfAPI);
 		})
@@ -132,7 +132,7 @@ describe('Database',function(){
 describe('Database',function(){
 	describe('AUID',function(){
 		it('should contain AUID for each artcle', function(){
-			var processedArticle = "";
+			var processedArticle = "1";
 			var AUID = "";
 			assert.equal(processedArticle,AUID);
 		})
@@ -150,7 +150,7 @@ processing algorithm*/
 describe('Database',function(){
 	describe('algorithm',function(){
 		it('should contain output from processing algorithm', function(){
-			var output = "";
+			var output = "1";
 			var retrievedValue = "";
 			assert.equal(output,retrievedValue)
 		})
@@ -168,7 +168,7 @@ contain new and old variables for the algorithm to use in the forecast calculati
 describe('Database',function(){
 	describe('algorithm',function(){
 		it('should contain new and old variables for the algorithm', function(){
-			var oldVar = "";
+			var oldVar = "1";
 			var newVar = "";
 			assert.equal(oldVar,newVar);
 		})
@@ -186,7 +186,7 @@ system should display the selected data in chart and table.*/
 describe('display',function(){
 	describe('chart',function(){
 		it('should display the selected chart data', function(done){
-			var dataSelected = "";
+			var dataSelected = "1";
 			var chartData = "";
 			assert.equal(dataSelected,chartData);
 			done();
@@ -197,7 +197,7 @@ describe('display',function(){
 describe('display',function(){
 	describe('table',function(){
 		it('should display the selected table data', function(done){
-			var dataSelected = "";
+			var dataSelected = "1";
 			var tableData = "";
 			assert.equal(dataSelected,tableData);
 			done();
@@ -218,7 +218,7 @@ and graph of data processed within last 24 hours.*/
 describe('System',function(){
 	describe('results',function(){
 		it('should display results of data processed within last 24 hours', function(){
-			var time = Date.now();
+			var time = "";
 			var resultsTime = Date.now();
 			assert.equal(time,resultsTime);
 		})
@@ -228,7 +228,7 @@ describe('System',function(){
 describe('System',function(){
 	describe('graph',function(){
 		it('should display results of graph processed within last 24 hours', function(){
-			var time = Date.now();
+			var time = "";
 			var graphTime = Date.now();
 			assert.equal(time,graphTime);
 		})
