@@ -1,0 +1,243 @@
+ubuntu@ubuntu-VirtualBox:~/psu500-team4/processor$ npm test
+
+> processor@0.0.1 test /home/ubuntu/psu500-team4/processor
+> mocha test
+
+
+  ․․․․․․․․․․․․․․․․
+
+  1 passing (69ms)
+  15 failing
+
+  1) Database NewsText should contain data for 2 years back for NewsText:
+     AssertionError: "" == 1402260840057
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:39:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  2) Database NewsSource should contain data for 2 years back for NewsSource:
+     AssertionError: "" == 1402260840074
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:49:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  3) Database NewsHeadline should contain data for 2 years back for NewsHeadline:
+     AssertionError: "" == 1402260840074
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:60:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  4) Database NewsTime should contain data for 2 years back for NewsTime:
+     AssertionError: "" == 1402260840074
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:71:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  5) Database NewsDate should contain data for 2 years back for NewsDate:
+     AssertionError: "" == 1402260840075
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:82:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  6) Database AUID should contain data for 2 years back for AUID:
+     AssertionError: "" == 1402260840075
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:93:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  7) Database Timestamp should contain, for each processed article: Timestamp of processing:
+
+      AssertionError: "1" == ""
+      + expected - actual
+
+      -1
+
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:115:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  8) Database Output should contain, for each processed article: Output of API:
+
+      AssertionError: "1" == ""
+      + expected - actual
+
+      -1
+
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:126:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  9) Database AUID should contain AUID for each artcle:
+
+      AssertionError: "1" == ""
+      + expected - actual
+
+      -1
+
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:137:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  10) Database algorithm should contain output from processing algorithm:
+
+      AssertionError: "1" == ""
+      + expected - actual
+
+      -1
+
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:155:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  11) Database algorithm should contain new and old variables for the algorithm:
+
+      AssertionError: "1" == ""
+      + expected - actual
+
+      -1
+
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:173:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  12) display chart should display the selected chart data:
+
+      AssertionError: "1" == ""
+      + expected - actual
+
+      -1
+
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:191:11)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:196:15)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  13) display table should display the selected table data:
+
+      AssertionError: "1" == ""
+      + expected - actual
+
+      -1
+
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:202:11)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:196:15)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  14) System results should display results of data processed within last 24 hours:
+     AssertionError: "" == 1402260840103
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:223:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+  15) System graph should display results of graph processed within last 24 hours:
+     AssertionError: "" == 1402260840104
+      at Context.<anonymous> (/home/ubuntu/psu500-team4/processor/test/test.js:233:11)
+      at callFn (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:223:21)
+      at Test.Runnable.run (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runnable.js:216:7)
+      at Runner.runTest (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:373:10)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:451:12
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:298:14)
+      at /home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:308:7
+      at next (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:246:23)
+      at Object._onImmediate (/home/ubuntu/psu500-team4/processor/node_modules/mocha/lib/runner.js:275:5)
+      at processImmediate [as _immediateCallback] (timers.js:336:15)
+
+
+
+npm ERR! Test failed.  See above for more details.
+npm ERR! not ok code 0
