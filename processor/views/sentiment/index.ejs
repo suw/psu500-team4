@@ -48,22 +48,23 @@
             $.post(
                 '/analyze',
                 {
-                flavor: flavor,
+                flavor:flavor,
                 data:data,
                 options:options,
                 callback:callback
                 },
 
                 function (data) {
-
-                    $('#display').val(data);
                     window.location = "/sentimentpage";
-                }
-            ).fail(function(res){
+                    $('#display').val(data);
+                                })
+
+            .fail(function(res){
                 alert("Error: " + res.getResponseHeader("error"));
-            });
+                              });
+
         } else {
-            alert("A username and password is required");
-        }
-    });
+            alert("+++++++ERROR+++++++++");
+                }
+              });
 </script>

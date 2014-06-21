@@ -41,8 +41,8 @@ module.exports.routes = {
   },
 
   '/analyze':{
-    controller: 'Sentiment',
-    action: 'sentiment'
+    controller: 'SentimentController',
+    action: 'example'
   },
 
 
