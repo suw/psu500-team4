@@ -24,7 +24,6 @@ predictlyApp.config([
         $routeProvider
         .when('/',
         {
-            controller: 'ViewFrontPageController',
             templateUrl: 'app/view/frontpage.html'
         })
         .when('/dashboard/',
@@ -32,6 +31,12 @@ predictlyApp.config([
             controller: 'DashboardController',
             templateUrl: 'app/view/dashboard.html'
         })
+        .when('/real-time/',
+        {
+            controller: 'RealTimeAnalysisController',
+            templateUrl: 'app/view/real-time-analysis.html'
+        })
+
 
         .otherwise(
             { redirectTo: '/' }

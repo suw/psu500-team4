@@ -9,7 +9,7 @@
 var FrontPageControllers = angular.module('FrontPageControllers', [
 ]);
 
-FrontPageControllers.controller('ViewFrontPageController',[
+FrontPageControllers.controller('RealTimeAnalysisController',[
     '$scope',
     '$parse',
     '$location',

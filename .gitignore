@@ -4,3 +4,6 @@
 
 # Etc
 .DS_Store
+
+# SASS
+site-prototype/assets/.sass-cache
