@@ -13,7 +13,9 @@
     "should": "~3.3.2",
     "supertest": "~0.13.0",
     "sails-mongo": "0.9.8",
-    "nodetime": "~0.8.15"
+    "consolidate": "~0.9.1",
+    "nodetime": "~0.8.15",
+    "express": "~4.4.4"
   },
   "scripts": {
     "start": "node app.js",

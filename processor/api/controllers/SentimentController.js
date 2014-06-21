@@ -14,17 +14,47 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
+//Create the AlchemyAPI object
+
+var app = ('http');
+//Create the AlchemyAPI object
+var AlchemyAPI = require('../../alchemyapi');
+var alchemyapi = new AlchemyAPI();
+
+
+
+function start(req, res) {
+	var output = {};
+
+	//Start the analysis chain
+	create(req, res, create);
+}
 
 module.exports = {
-    
-  
 
 
-  /**
-   * Overrides for the settings in `config/controllers.js`
-   * (specific to SentimentController)
-   */
-  _config: {}
 
-  
-};
+
+create:function(req,res,output){
+
+  var myurl = req.params.all();
+  alchemyapi.sentiment('url',myurl,{}, function(response){
+    output['sentiment']= {url:myurl, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
+    	res.render('sentiment',output);
+  });
+
+
+},
+read:function(){},
+update:function(){},
+delete:function(){},
+
+
+    /**
+     * Overrides for the settings in `config/controllers.js`
+     * (specific to SentimentController)
+     */
+
+    _config: {}
+
+}

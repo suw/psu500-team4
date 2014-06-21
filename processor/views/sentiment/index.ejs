@@ -1,0 +1,69 @@
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<h1>Sentiment form</h1>
+
+<div>
+    <h3>Sentiment</h3>
+
+    <input type="text" id="target" placeholder="target" value="the" />
+    <input type="text" id="url" placeholder="url" value="www.nytimes.com"/>
+    <input type="text" id="jsonp" placeholder="jsonp" value="hi"/>
+    <input type="text" id="outputMode" placeholder="outputMode" value="json"/>
+
+    <button id="sentimentButton">get Sentiment</button>
+
+    <div id="display"></div>
+</div>
+
+
+<br><br>
+  	Calculates the targeted sentiment for text, a URL or HTML.<br><br>
+  	For an overview, please refer to: http://www.alchemyapi.com/products/features/sentiment-analysis/<br>
+  	For the docs, please refer to: http://www.alchemyapi.com/api/sentiment-analysis/<br><br>
+
+  	INPUT:<br>
+  	flavor -> which version of the call, i.e. text, url or html.<br>
+  	data -> the data to analyze, either the text, the url or html code.<br>
+  	target -> the word or phrase to run sentiment analysis on.<br>
+  	options -> various parameters that can be used to adjust how the API works, see below for more info on the available options.<br>
+  	callback -> the callback function for this async function<br><br>
+
+  	Available Options:<br>
+  	showSourceText	-> 0: disabled, 1: enabled<br><br>
+
+  	OUTPUT:<br>
+  	The response, already converted from JSON to a Javascript object.<br><br>
+
+
+<script>
+    $("#sentimentButton").click(function(){
+
+        var target = $("#target").val();
+        var url = $("#url").val();
+        var jsonp = $("#jsonp").val();
+        var outputMode = $("#outputMode").val();
+
+        if (target && url && jsonp && outputMode) {
+            $.post(
+                '/analyze',
+                {
+                target:target,
+                url:url,
+                jsonp:jsonp,
+                outputMode:outputMode
+                },
+
+                function () {
+                    $('#display').val(data);
+                                })
+
+            .fail(function(res){
+                alert("Error: " + res.getResponseHeader("error"));
+                              });
+
+        } else {
+            alert("+++++++ERROR+++++++++");
+                }
+              });
+</script>
