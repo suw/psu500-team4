@@ -6,10 +6,10 @@
 <div>
     <h3>Sentiment</h3>
 
-    <input type="text" id="flavor" placeholder="flavor" />
-    <input type="text" id="data" placeholder="data" />
-    <input type="text" id="options" placeholder="options" />
-    <input type="text" id="callback" placeholder="callback" />
+    <input type="text" id="target" placeholder="target" value="the" />
+    <input type="text" id="url" placeholder="url" value="www.nytimes.com"/>
+    <input type="text" id="jsonp" placeholder="jsonp" value="hi"/>
+    <input type="text" id="outputMode" placeholder="outputMode" value="json"/>
 
     <button id="sentimentButton">get Sentiment</button>
 
@@ -39,22 +39,22 @@
 <script>
     $("#sentimentButton").click(function(){
 
-        var flavor = $("#flavor").val();
-        var data = $("#data").val();
-        var options = $("#options").val();
-        var callback = $("#callback").val();
+        var target = $("#target").val();
+        var url = $("#url").val();
+        var jsonp = $("#jsonp").val();
+        var outputMode = $("#outputMode").val();
 
-        if (flavor && data && options && callback) {
+        if (target && url && jsonp && outputMode) {
             $.post(
                 '/analyze',
                 {
-                flavor:flavor,
-                data:data,
-                options:options,
-                callback:callback
+                target:target,
+                url:url,
+                jsonp:jsonp,
+                outputMode:outputMode
                 },
 
-                function (data) {
+                function () {
                     $('#display').val(data);
                                 })
 

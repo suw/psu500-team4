@@ -40,10 +40,7 @@ module.exports.routes = {
     view: 'sentiment/index'
   },
 
-  '/analyze':{
-    controller: 'SentimentController',
-    action: 'example'
-  },
+
 
 
 
@@ -60,7 +57,7 @@ module.exports.routes = {
 
   'delete /sentiment': 'SentimentController.destroy',
 
-  'post /analyze': 'SentimentController.sentiment'
+  'post /analyze': 'SentimentController.create'
   //***********************************************************************
   //***********************************************************************
 
