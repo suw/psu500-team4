@@ -1,0 +1,69 @@
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<h1>Sentiment form</h1>
+
+<div>
+    <h3>Sentiment</h3>
+
+    <input type="text" id="flavor" placeholder="flavor" />
+    <input type="text" id="data" placeholder="data" />
+    <input type="text" id="options" placeholder="options" />
+    <input type="text" id="callback" placeholder="callback" />
+
+    <button id="sentimentButton">get Sentiment</button>
+
+    <div id="display"></div>
+</div>
+
+
+<br><br>
+  	Calculates the targeted sentiment for text, a URL or HTML.<br><br>
+  	For an overview, please refer to: http://www.alchemyapi.com/products/features/sentiment-analysis/<br>
+  	For the docs, please refer to: http://www.alchemyapi.com/api/sentiment-analysis/<br><br>
+
+  	INPUT:<br>
+  	flavor -> which version of the call, i.e. text, url or html.<br>
+  	data -> the data to analyze, either the text, the url or html code.<br>
+  	target -> the word or phrase to run sentiment analysis on.<br>
+  	options -> various parameters that can be used to adjust how the API works, see below for more info on the available options.<br>
+  	callback -> the callback function for this async function<br><br>
+
+  	Available Options:<br>
+  	showSourceText	-> 0: disabled, 1: enabled<br><br>
+
+  	OUTPUT:<br>
+  	The response, already converted from JSON to a Javascript object.<br><br>
+
+
+<script>
+    $("#sentimentButton").click(function(){
+
+        var flavor = $("#flavor").val();
+        var data = $("#data").val();
+        var options = $("#options").val();
+        var callback = $("#callback").val();
+
+        if (flavor && data && options && callback) {
+            $.post(
+                '/analyze',
+                {
+                flavor: flavor,
+                data:data,
+                options:options,
+                callback:callback
+                },
+
+                function (data) {
+
+                    $('#display').val(data);
+                    window.location = "/sentimentpage";
+                }
+            ).fail(function(res){
+                alert("Error: " + res.getResponseHeader("error"));
+            });
+        } else {
+            alert("A username and password is required");
+        }
+    });
+</script>
