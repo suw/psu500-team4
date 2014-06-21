@@ -9,11 +9,17 @@
 module.exports = {
 
   attributes: {
-  	
+
   	/* e.g.
   	nickname: 'string'
   	*/
-    
+
+    status:'STRING',
+    url:'STRING',
+    language:'STRING',
+    text:'STRING',
+    DocSentiment:{}
+
   }
 
 };

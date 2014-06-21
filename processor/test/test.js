@@ -21,7 +21,7 @@ describe('Array', function(){
 //===========================================================================================
 //=====================Team 4 - Application Testing==========================================
 //===========================================================================================
-/*After the process to load a news data archive, the system database should contain the 
+/*After the process to load a news data archive, the system database should contain the
 following data for 2 years back from the day the process started:
 News text
 News source
@@ -37,7 +37,7 @@ describe('Database',function(){
 			var time = "";
 			var NewsTextTime = Date.now();
 			assert.equal(time,NewsTextTime);
-		})                                     
+		})
 	})
 })
 //should contain the following data for 2 years back from the day the process started: News source
@@ -100,7 +100,7 @@ describe('Database',function(){
 
 
 //===========================================================================================
-/*After the system processes each articles through the NLP API, the system database should 
+/*After the system processes each articles through the NLP API, the system database should
 contain, for each processed article:
 Timestamp of processing
 Output of API
@@ -144,7 +144,7 @@ describe('Database',function(){
 
 
 //===========================================================================================
-/*After system processes results from NLP API, system database should contain output from 
+/*After system processes results from NLP API, system database should contain output from
 processing algorithm*/
 //should contain output from processing algorithm
 describe('Database',function(){
@@ -162,7 +162,7 @@ describe('Database',function(){
 
 
 //===========================================================================================
-/*After system recalculates and auto-adjusts algorithm variables, system database should 
+/*After system recalculates and auto-adjusts algorithm variables, system database should
 contain new and old variables for the algorithm to use in the forecast calculation.*/
 //should contain new and old variables for the algorithm
 describe('Database',function(){
@@ -180,7 +180,7 @@ describe('Database',function(){
 
 
 //===========================================================================================
-/*After user selects to display forecasting and benchmark market index for up to one month, 
+/*After user selects to display forecasting and benchmark market index for up to one month,
 system should display the selected data in chart and table.*/
 //should display the selected data in chart and table
 describe('display',function(){
@@ -206,13 +206,41 @@ describe('display',function(){
 })
 
 
+//===========================================================================================
+/*Testing Targeted Sentiment functionality*/
+//Targeted Sentiment
+function sentiment_targeted() {
+	console.log('Checking targeted sentiment . . . ');
+	alchemyapi.sentiment_targeted('text', test_text, null, null, function(response) {
+		assert.equal(response['status'],'ERROR');	//did not supply the target
+
+		alchemyapi.sentiment_targeted('random', test_text, 'heart', null, function(response) {
+			assert.equal(response['status'],'ERROR');	//invalid flavor
+
+			alchemyapi.sentiment_targeted('text', test_text, 'heart', null, function(response) {
+				assert.equal(response['status'],'OK');
+
+				alchemyapi.sentiment_targeted('html', test_html, 'language', null, function(response) {
+					assert.equal(response['status'],'OK');
+
+					alchemyapi.sentiment_targeted('url', test_url, 'Congress', null, function(response) {
+						assert.equal(response['status'],'OK');
+						console.log('Targeted sentiment tests complete!\n');
+						text();
+					});
+				});
+			});
+		});
+	});
+}
+
 
 
 
 //===========================================================================================
 //===================================Front-End===============================================
 //===========================================================================================
-/*After select authenticates and goes to the dashboard page, system should display results 
+/*After select authenticates and goes to the dashboard page, system should display results
 and graph of data processed within last 24 hours.*/
 //should display results and graph of data processed within last 24 hours
 describe('System',function(){
@@ -240,7 +268,3 @@ describe('System',function(){
 
 
 //===========================================================================================
-
-
-
-
