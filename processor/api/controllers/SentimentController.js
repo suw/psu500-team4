@@ -36,6 +36,7 @@ module.exports = {
 create:function(req,res,output){
 
 /*
+//sentiment by url without target...
 var params = req.params.all();
 var url = params.url;
 console.log(params);
@@ -52,6 +53,8 @@ var target = params.target;
 var apikey = params.apikey;
 
 console.log(params);
+
+//targeted sentiment...
 alchemyapi.sentiment_targeted('url',url,target,{}, function(response){
   output['sentiment_targeted']= {target:target, url:url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
   console.log(output);
@@ -60,17 +63,7 @@ alchemyapi.sentiment_targeted('url',url,target,{}, function(response){
 
 
 },
-read:function(){
-
-  var params = req.params.all();
-  var url = params.url;
-  console.log(params);
-  alchemyapi.sentiment('url',url,{}, function(response){
-    output['sentiment']= {url:url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
-    console.log(output);
-
-  });
-},
+read:function(){},
 update:function(){},
 destroy:function(){},
 

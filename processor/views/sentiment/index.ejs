@@ -6,7 +6,6 @@
 <div>
     <h3>Sentiment</h3>
 
-    <input type="text" id="flavor" placeholder="flavor" value="url" />
     <input type="text" id="target" placeholder="target" value="leagues" />
     <input type="text" id="url" placeholder="url" value="www.nytimes.com"/>
     <input type="text" id="jsonp" placeholder="jsonp" value="article"/>
@@ -39,7 +38,6 @@
 
 <script>
     $("#sentimentButton").click(function(){
-        var flavor = $('#flavor').val();
         var target = $("#target").val();
         var url = $("#url").val();
         var apikey = "315505f383ab7bc362f60a8c663a51fe2381e71d";
@@ -50,7 +48,6 @@
             $.post(
                 '/analyze',
                 {
-                flavor:flavor,
                 target:target,
                 url:url,
                 apikey:apikey,
@@ -60,7 +57,7 @@
 
                 function (data) {
 
-                    $('#display').val(data);
+                    $('#display').append(data);
                                 })
 
             .fail(function(res){
