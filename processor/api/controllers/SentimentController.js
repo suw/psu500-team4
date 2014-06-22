@@ -55,6 +55,7 @@ console.log(params);
 alchemyapi.sentiment_targeted('url',url,target,{}, function(response){
   output['sentiment_targeted']= {target:target, url:url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
   console.log(output);
+  res.json(output.sentiment_targeted.results);
   });
 
 
