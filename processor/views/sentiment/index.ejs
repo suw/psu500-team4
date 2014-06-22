@@ -6,14 +6,16 @@
 <div>
     <h3>Sentiment</h3>
 
-    <input type="text" id="target" placeholder="target" value="the" />
+    <input type="text" id="flavor" placeholder="flavor" value="url" />
+    <input type="text" id="target" placeholder="target" value="united" />
     <input type="text" id="url" placeholder="url" value="www.nytimes.com"/>
-    <input type="text" id="jsonp" placeholder="jsonp" value="hi"/>
+    <input type="text" id="jsonp" placeholder="jsonp" value="article"/>
     <input type="text" id="outputMode" placeholder="outputMode" value="json"/>
 
     <button id="sentimentButton">get Sentiment</button>
-
-    <div id="display"></div>
+    <div id="wrapper">
+      <textarea id="display"></textarea>
+    </div>
 </div>
 
 
@@ -38,24 +40,27 @@
 
 <script>
     $("#sentimentButton").click(function(){
-
+        var flavor = $('#flavor').val();
         var target = $("#target").val();
         var url = $("#url").val();
+        var apikey = "315505f383ab7bc362f60a8c663a51fe2381e71d";
         var jsonp = $("#jsonp").val();
         var outputMode = $("#outputMode").val();
 
-        if (target && url && jsonp && outputMode) {
+        if (flavor && target && url && apikey && jsonp && outputMode) {
             $.post(
                 '/analyze',
                 {
+                flavor:flavor,
                 target:target,
                 url:url,
+                apikey:apikey,
                 jsonp:jsonp,
                 outputMode:outputMode
                 },
-
-                function () {
-                    $('#display').val(data);
+                function (data) {
+console.log(data);
+                    $('#display').append(data);
                                 })
 
             .fail(function(res){

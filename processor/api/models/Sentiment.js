@@ -14,12 +14,6 @@ module.exports = {
   	nickname: 'string'
   	*/
 
-    status:'STRING',
-    url:'STRING',
-    language:'STRING',
-    text:'STRING',
-    DocSentiment:{}
-
   }
 
 };
