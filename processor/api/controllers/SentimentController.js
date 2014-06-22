@@ -54,7 +54,7 @@ alchemyapi.sentiment_targeted('url',url,target,{}, function(response){
   res.json(output.sentiment_targeted.results);
   Sentiment.create(params, function(err,Sentiment){
     if (err) return next(err);
-    //res.status(201);
+    res.status(201);
     res.json(Sentiment);
   });
 
@@ -64,9 +64,52 @@ alchemyapi.sentiment_targeted('url',url,target,{}, function(response){
 
 //========================================================================
 //========================================================================
-read:function(){
+read:function(req,res,next){
 
+    var params = req.params.all();
+    var id = params.id;
 
+    var idShortCut = isShortCut(id);
+
+    if (idShortCut === true){
+      return next;
+    }
+
+    if (id){
+      Sentiment.findOne(id, function(err,Sentiment){
+
+        if(Sentiment == undefined) return res.notFound();
+
+        if(err) return next(err);
+
+        res.json(Sentiment);
+      });
+    }else{
+
+      var where = params.where;
+
+      if (_.isString(where)){
+        where = JSON.parse(where);
+      }
+
+      var options = {
+        limit: req.param('limit') || undefined,
+        skip: req.param('skip') || undefined,
+        sort: req.param('sort') || undefined,
+        where: where || undefined
+      };
+
+      console.log("Options:", options);
+
+      Sentiment.find(options, function(err,Sentiment){
+        if(Sentiment == undefined) return res.notFound();
+
+        if(err) return next(err);
+
+        res.json(Sentiment);
+      });
+
+    }
 
 },
 
