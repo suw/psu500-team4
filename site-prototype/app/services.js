@@ -9,13 +9,13 @@
 
 var SentimentServices = angular.module('SentimentServices', ['ngResource']);
 
-SentimentServices.factory('Request', ['$resource', function($resource) {
-    var Request = $resource('/sentiment/',
+SentimentServices.factory('SentimentRequest', ['$resource', function($resource) {
+    var SentimentRequest = $resource('http://localhost:1337/sentiment/',
         { id: '@id' },
         {
             update: { method: 'PUT' }
         }
     );
-    return Request;
+    return SentimentRequest;
     }
 ]);

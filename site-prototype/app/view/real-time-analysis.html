@@ -16,10 +16,10 @@
             <form role="form">
                 <div class="form-group">
                     <label for="requestArticleUrl">Article Link</label>
-                    <input type="text" class="form-control" id="requestArticle" placeholder="http://example.com/someArticle">
+                    <input ng-model="requestUrl" type="text" class="form-control" id="requestArticle" placeholder="http://example.com/someArticle">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary" ng-click="processArticle">Process</button>
+                    <button class="btn btn-primary" ng-click="processArticle()">Process</button>
                 </div>
             </form>
         </div>

@@ -7,6 +7,7 @@
 'use strict';
 
 var FrontPageControllers = angular.module('FrontPageControllers', [
+    'SentimentServices'
 ]);
 
 FrontPageControllers.controller('RealTimeAnalysisController',[
@@ -14,13 +15,30 @@ FrontPageControllers.controller('RealTimeAnalysisController',[
     '$parse',
     '$location',
     '$routeParams',
+    'SentimentRequest',
     function(
         $scope,
         $parse,
         $location,
-        $routeParams
+        $routeParams,
+        SentimentRequest
     ) {
 
+        $scope.processArticle = function() {
+            var articleRequested = new SentimentRequest({
+                apikey: "315505f383ab7bc362f60a8c663a51fe2381e71d",
+                flavor: "url",
+                url: "http://www.nytimes.com/2014/06/22/technology/yahoo-wants-you-to-linger-on-the-ads-too.html?ref=business&_r=0",
+                target: "to",
+                jsonp: null
+            });
+
+            articleRequested.$save(
+                function(response) {
+                    console.log(response);
+                }
+            );
+        }
     }
 ]);
 
