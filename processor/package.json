@@ -15,7 +15,8 @@
     "sails-mongo": "0.9.8",
     "consolidate": "~0.9.1",
     "nodetime": "~0.8.15",
-    "express": "~4.4.4"
+    "express": "~4.4.4",
+    "request": "~2.36.0"
   },
   "scripts": {
     "start": "node app.js",

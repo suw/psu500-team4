@@ -41,12 +41,6 @@ module.exports.routes = {
   },
 
 
-
-
-
-
-
-
   //**********************Routes for Sentiment*****************************
   //***********************************************************************
   'get /sentiment': 'SentimentController.find',

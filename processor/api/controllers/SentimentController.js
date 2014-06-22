@@ -16,19 +16,17 @@
  */
 //Create the AlchemyAPI object
 
-var app = ('http');
+
 //Create the AlchemyAPI object
 var AlchemyAPI = require('../../alchemyapi');
 var alchemyapi = new AlchemyAPI();
+var express = require('express');
+var app = express();
+var request = require('request');
 
 
 
-function start(req, res) {
-	var output = {};
 
-	//Start the analysis chain
-	create(req, res, create);
-}
 
 module.exports = {
 
@@ -37,17 +35,20 @@ module.exports = {
 
 create:function(req,res,output){
 
-  var myurl = req.params.all();
-  alchemyapi.sentiment('url',myurl,{}, function(response){
-    output['sentiment']= {url:myurl, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
-    	res.render('sentiment',output);
-  });
+var params = req.params.all();
+var url = params.url;
+console.log(params);
+alchemyapi.sentiment('url',url,{}, function(response){
+  output['sentiment']= {url:url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
+  console.log(output);
+  //res.render('sentiment/index.ejs', output);
+});
 
 
 },
 read:function(){},
 update:function(){},
-delete:function(){},
+destroy:function(){},
 
 
     /**
