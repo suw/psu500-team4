@@ -1,0 +1,9 @@
+# VIM stuff
+*.swo
+*.swp
+
+# Etc
+.DS_Store
+
+# SASS
+site-prototype/assets/.sass-cache
