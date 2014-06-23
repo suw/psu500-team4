@@ -24,18 +24,51 @@ FrontPageControllers.controller('RealTimeAnalysisController',[
         SentimentRequest
     ) {
 
+        /**
+         * Call the SentimentRequest service to grab past API requests
+         */
+        var updatePastRequests = function() {
+            $scope.pastRequests = SentimentRequest.query();
+        }
+
+        /*
+         * Update the table with past requests before doing other stuff
+         */
+        updatePastRequests();
+
+        /*
+         * Trigger an article processing request
+         */
         $scope.processArticle = function() {
+
+            // Freshen up the page to be ready for new request
+            $scope.sendingRequest = true;
+            $scope.requestSuccess = false;
+            $scope.responseType = null;
+            $scope.responseScore = null;
+
+            // Set up the object to be ready for the request
             var articleRequested = new SentimentRequest({
                 apikey: "315505f383ab7bc362f60a8c663a51fe2381e71d",
                 flavor: "url",
-                url: "http://www.nytimes.com/2014/06/22/technology/yahoo-wants-you-to-linger-on-the-ads-too.html?ref=business&_r=0",
+                url: $scope.requestUrl,
                 target: "to",
                 jsonp: null
             });
 
+            // Send off the request and handle the response data
             articleRequested.$save(
                 function(response) {
-                    console.log(response);
+                    if (response.type == 'negative' || response.type == 'positive') {
+                        $scope.sendingRequest = false;
+                        $scope.requestSuccess = true;
+                        $scope.requestUrl = '';
+                        $scope.responseData = response;
+                        $scope.responseType = response.type;
+                        $scope.responseScore = response.score;
+                    } else {
+                        $scope.apiError = true;
+                    }
                 }
             );
         }

@@ -11,6 +11,18 @@
             <li class="active">Real Time Analysis</li>
         </ul>
     </div>
+    <div class="row" ng-show="requestSuccess">
+        <div class="col-md-12">
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    <h2>Sentiment Analysis Complete <small>Here's your results:</small></h2>
+                    <h3>Sentiment: {{responseType}}</h3>
+                    <h4>Score: {{responseScore}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-12">
             <form role="form">
@@ -19,9 +31,41 @@
                     <input ng-model="requestUrl" type="text" class="form-control" id="requestArticle" placeholder="http://example.com/someArticle">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary" ng-click="processArticle()">Process</button>
+                    <button class="btn btn-primary" ng-click="processArticle()" ng-disable="sendingRequest">Process</button>
+                </div>
+                <div class="alert alert-warning" ng-show="noUrlProvided">
+                    <b>Uh oh!</b> You didn't give an URL to process!
+                </div>
+                <div class="alert alert-warning" ng-show="apiError">
+                    <b>Oops!</b> Didn't get anything for that. Try something else?
+                </div>
+
+                <div class="alert alert-info" ng-show="sendingRequest">
+                    <b>Sending request</b>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Past requests</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Request Date</th>
+                        <th>Link</th>
+                        <th>Request Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="rq in pastRequests | orderBy:'-createdAt'">
+                        <td>{{rq.createdAt | date:'medium'}}</td>
+                        <td><a ng-href="{{rq.url}}" target="_BLANK">Link</a></td>
+                        <td>{{rq.id}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
