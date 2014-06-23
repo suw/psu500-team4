@@ -10,7 +10,7 @@
 var SentimentServices = angular.module('SentimentServices', ['ngResource']);
 
 SentimentServices.factory('SentimentRequest', ['$resource', function($resource) {
-    var SentimentRequest = $resource('http://localhost:1337/sentiment/',
+    var SentimentRequest = $resource('/sentiment/',
         { id: '@id' },
         {
             update: { method: 'PUT' }
