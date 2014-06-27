@@ -36,8 +36,6 @@ predictlyApp.config([
             controller: 'RealTimeAnalysisController',
             templateUrl: 'app/view/real-time-analysis.html'
         })
-
-
         .otherwise(
             { redirectTo: '/' }
         );

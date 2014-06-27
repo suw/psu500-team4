@@ -80,11 +80,13 @@ FrontPageControllers.controller('DashboardController',[
     '$parse',
     '$location',
     '$routeParams',
+    'DisplayFilters',
     function(
         $scope,
         $parse,
         $location,
-        $routeParams
+        $routeParams,
+        DisplayFilters
     ) {
         $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
             // Create the chart
