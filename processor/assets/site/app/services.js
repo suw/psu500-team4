@@ -19,3 +19,4 @@ SentimentServices.factory('SentimentRequest', ['$resource', function($resource) 
     return SentimentRequest;
     }
 ]);
+

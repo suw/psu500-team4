@@ -7,7 +7,8 @@
 'use strict';
 
 var FrontPageControllers = angular.module('FrontPageControllers', [
-    'SentimentServices'
+    'SentimentServices',
+    'DisplayFilters'
 ]);
 
 FrontPageControllers.controller('RealTimeAnalysisController',[
@@ -80,13 +81,11 @@ FrontPageControllers.controller('DashboardController',[
     '$parse',
     '$location',
     '$routeParams',
-    'DisplayFilters',
     function(
         $scope,
         $parse,
         $location,
-        $routeParams,
-        DisplayFilters
+        $routeParams
     ) {
         $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
             // Create the chart
@@ -113,5 +112,31 @@ FrontPageControllers.controller('DashboardController',[
         });
 
 
+    }
+]);
+
+FrontPageControllers.controller('SourceNYTController', [
+    '$scope',
+    '$parse',
+    '$http',
+    '$location',
+    '$routeParams',
+    function(
+        $scope,
+        $parse,
+        $http,
+        $location,
+        $routeParams
+    ) {
+
+        var dataPromise = $http.get('http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:("Business")&limit=100&api-key=a931fc7951cee1141ff8bdf3f37a49db:16:69480846&fl=web_url,snippet,headline');
+
+        dataPromise.success(function(data, status, headers, config) {
+            $scope.data= data;
+        });
+
+        dataPromise.error(function(data, status, headers, config) {
+            $scope.dataGrabError = true;
+        });
     }
 ]);

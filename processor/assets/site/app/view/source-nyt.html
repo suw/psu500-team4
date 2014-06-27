@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row header">
+        <div class="col-md-12">
+            <h1>Article Source <small>New York Times &mdash; Business</small></h1>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" ng-show="dataGrabError">
+        <b>Uh oh</b> We had some trouble grabbing data. Try again?
+    </div>
+
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="/#!/site/">Home</a></li>
+            <li class="active">New York Times &mdash; Business</li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default" ng-repeat="article in data.response.docs track by $index">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{$index}}">
+                            <div class="pull-left">{{article.headline.main}} <span class="caret"></span> </div>
+                            <div class="pull-right">
+                                <a href="#"><small>Process Sentiment <i class="fa fa-share"></i></small></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-{{$index}}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        {{article.snippet}}
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
