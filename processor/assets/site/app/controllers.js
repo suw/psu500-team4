@@ -169,14 +169,39 @@ FrontPageControllers.controller('SourceNYTController', [
         $routeParams
     ) {
 
-        var dataPromise = $http.get('http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:("Business")&limit=100&api-key=a931fc7951cee1141ff8bdf3f37a49db:16:69480846&fl=web_url,snippet,headline');
 
-        dataPromise.success(function(data, status, headers, config) {
-            $scope.data= data;
-        });
+        $scope.pagesToShow = [];
 
-        dataPromise.error(function(data, status, headers, config) {
-            $scope.dataGrabError = true;
-        });
+        /**
+         * Get NYT data from API
+         *
+         * @param int Page we want to load
+         */
+        $scope.getData = function(page) {
+            $scope.isLoading = true;
+
+            // Set up API URI
+            var apiString = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:("Business")&limit=100&api-key=a931fc7951cee1141ff8bdf3f37a49db:16:69480846&fl=web_url,snippet,headline'
+            apiString += '&page=' + page;
+
+            // Do it!
+            var dataPromise = $http.get(
+                apiString
+            );
+
+            dataPromise.success(function(data, status, headers, config) {
+                $scope.data = data;
+                $scope.isLoading = false;
+            });
+
+            dataPromise.error(function(data, status, headers, config) {
+                $scope.dataGrabError = true;
+            });
+
+            $scope.currentPage = page;
+        }
+
+        // Initial data load of page 1
+        $scope.getData(0);
     }
 ]);

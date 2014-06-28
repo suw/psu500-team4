@@ -16,6 +16,12 @@
         </ul>
     </div>
 
+    <div class="row" ng-show="isLoading">
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-success" style="width: 100%">Loading...</div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="panel-group" id="accordion">
             <div class="panel panel-default" ng-repeat="article in data.response.docs track by $index">
@@ -36,6 +42,16 @@
                     </div>
                 </div>
             </div>
+    </div>
+
+    <div class="container" ng-hide="isLoading">
+        <div class="center-block">
+            <ul class="pagination">
+                <li ng-show="currentPage > 0"><a href="" ng-click="getData(currentPage- 1)">&laquo;</a></li>
+                <li><a href="">{{currentPage + 1}}</a></li>
+                <li><a href="" ng-click="getData(currentPage + 1)">&raquo;</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 
