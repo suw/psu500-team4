@@ -169,9 +169,6 @@ FrontPageControllers.controller('SourceNYTController', [
         $routeParams
     ) {
 
-
-        $scope.pagesToShow = [];
-
         /**
          * Get NYT data from API
          *
