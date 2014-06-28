@@ -202,3 +202,31 @@ FrontPageControllers.controller('SourceNYTController', [
         $scope.getData(0);
     }
 ]);
+
+
+
+FrontPageControllers.controller('RSSDataFeedController', [
+    '$scope',
+    '$parse',
+    '$http',
+    '$location',
+    '$routeParams',
+    'FeedService',
+    function(
+        $scope,
+        $parse,
+        $http,
+        $location,
+        $routeParams,
+        FeedService
+    ) {
+
+        $scope.url = 'http://finance.yahoo.com/rss/industry?s=msft';
+
+        $scope.processFeed = function() {
+            FeedService.parseFeed($scope.url).then(function(response) {
+                $scope.feeds = response.data.responseData.feed.entries;
+            });
+        }
+    }
+]);

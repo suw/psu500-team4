@@ -2,4 +2,5 @@
 body {
   padding-top: 75px; }
 
-/** Overrides **/
+div .bottom-spaced {
+  margin-bottom: 10px; }

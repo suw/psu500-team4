@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row header">
+        <div class="col-md-12">
+            <h1>Article Source <small>RSS Feeds</small></h1>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" ng-show="dataGrabError">
+        <b>Uh oh</b> We had some trouble grabbing data. Try again?
+    </div>
+
+    <div class="row">
+        <ul class="breadcrumb">
+            <li><a href="/#!/site/">Home</a></li>
+            <li class="active">RSS Feeds</li>
+        </ul>
+    </div>
+
+    <div class="row" ng-show="isLoading">
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-success" style="width: 100%">Loading...</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group bottom-spaced">
+                <input type="text" class="form-control" placeholder="RSS Feed" ng-model="url">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="processFeed()">Grab data</button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default" ng-repeat="article in feeds track by $index">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{$index}}">
+                                <div class="pull-left">{{article.title}} <span class="caret"></span> </div>
+                                <div class="pull-right">
+                                    <a href="#"><small>Process Sentiment <i class="fa fa-share"></i></small></a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse-{{$index}}" class="panel-collapse collapse">
+                        <div class="panel-body" ng-hide="article.contentSnippit == ''">
+                            {{article.contentSnippet}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

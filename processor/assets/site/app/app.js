@@ -41,6 +41,11 @@ predictlyApp.config([
             controller: 'SourceNYTController',
             templateUrl: 'app/view/source-nyt.html'
         })
+        .when('/source-rss/',
+        {
+            controller: 'RSSDataFeedController',
+            templateUrl: 'app/view/source-rss.html'
+        })
         .otherwise(
             { redirectTo: '/' }
         );
