@@ -153,23 +153,52 @@ FrontPageControllers.controller('DashboardController',[
                 series: seriesOptions
             });
         }
-
     }
 ]);
 
 FrontPageControllers.controller('SourceNYTController', [
     '$scope',
     '$parse',
+    '$rootScope',
     '$http',
     '$location',
     '$routeParams',
+    'SentimentRequest',
     function(
         $scope,
         $parse,
+        $rootScope,
         $http,
         $location,
-        $routeParams
+        $routeParams,
+        SentimentRequest
     ) {
+
+        $scope.processArticle = function(requestUrl, index) {
+
+            // Set up the object to be ready for the request
+            var articleRequested = new SentimentRequest({
+                apikey: $rootScope.alchemyApiKey,
+                flavor: "url",
+                url: requestUrl,
+                target: "to",
+                jsonp: null
+            });
+
+            // Send off the request and handle the response data
+            articleRequested.$save(
+                function(response) {
+                    if (response.type == 'negative' || response.type == 'positive') {
+                        $scope.data.response.docs[index].sentiment = response.type;
+                        $scope.data.response.docs[index].score = response.score;
+                        angular.element('#collapse-'+index).collapse('show');
+                    } else {
+                        $scope.dataGrabError = true;
+                    }
+                }
+            );
+        }
+
 
         /**
          * Get NYT data from API
@@ -210,17 +239,21 @@ FrontPageControllers.controller('SourceNYTController', [
 FrontPageControllers.controller('RSSDataFeedController', [
     '$scope',
     '$parse',
+    '$rootScope',
     '$http',
     '$location',
     '$routeParams',
     'FeedService',
+    'SentimentRequest',
     function(
         $scope,
         $parse,
+        $rootScope,
         $http,
         $location,
         $routeParams,
-        FeedService
+        FeedService,
+        SentimentRequest
     ) {
 
         $scope.url = 'http://finance.yahoo.com/rss/industry?s=msft';
@@ -229,6 +262,33 @@ FrontPageControllers.controller('RSSDataFeedController', [
             FeedService.parseFeed($scope.url).then(function(response) {
                 $scope.feeds = response.data.responseData.feed.entries;
             });
+        }
+
+        $scope.processArticle = function(requestUrl, index) {
+
+
+            // Set up the object to be ready for the request
+            var articleRequested = new SentimentRequest({
+                apikey: $rootScope.alchemyApiKey,
+                flavor: "url",
+                url: requestUrl,
+                target: "to",
+                jsonp: null
+            });
+
+            // Send off the request and handle the response data
+            articleRequested.$save(
+                function(response) {
+
+                    if (response.type == 'negative' || response.type == 'positive') {
+                        $scope.feeds[index].sentiment = response.type;
+                        $scope.feeds[index].score = response.score;
+                        angular.element('#collapse-'+index).collapse('show');
+                    } else {
+                        $scope.dataGrabError = true;
+                    }
+                }
+            );
         }
     }
 ]);

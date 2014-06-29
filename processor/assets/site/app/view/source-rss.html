@@ -42,7 +42,7 @@
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{$index}}">
                                 <div class="pull-left">{{article.title}} <span class="caret"></span> </div>
                                 <div class="pull-right">
-                                    <a href="#"><small>Process Sentiment <i class="fa fa-share"></i></small></a>
+                                    <a href="" ng-click="processArticle(article.link, $index)"><small>Process Sentiment <i class="fa fa-share"></i></small></a>
                                 </div>
                                 <div class="clearfix"></div>
                             </a>
@@ -50,7 +50,13 @@
                     </div>
                     <div id="collapse-{{$index}}" class="panel-collapse collapse">
                         <div class="panel-body" ng-hide="article.contentSnippit == ''">
-                            {{article.contentSnippet}}
+                            <p>{{article.contentSnippet}}
+                            &mdash; <a href="{{article.link}}">Link</a></p>
+                            <div ng-show="feeds[$index].sentiment">
+                                <h3>Results</h3>
+                                <h4>Sentiment: {{feeds[$index].sentiment}}</h4>
+                                <h4>Score: {{feeds[$index].score}}</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
