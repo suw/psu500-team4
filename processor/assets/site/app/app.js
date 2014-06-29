@@ -51,3 +51,7 @@ predictlyApp.config([
         );
     }
 ]);
+
+predictlyApp.run(function($rootScope) {
+    $rootScope.alchemyApiKey = '315505f383ab7bc362f60a8c663a51fe2381e71d';
+});

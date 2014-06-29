@@ -13,12 +13,14 @@ var FrontPageControllers = angular.module('FrontPageControllers', [
 
 FrontPageControllers.controller('RealTimeAnalysisController',[
     '$scope',
+    '$rootScope',
     '$parse',
     '$location',
     '$routeParams',
     'SentimentRequest',
     function(
         $scope,
+        $rootScope,
         $parse,
         $location,
         $routeParams,
@@ -50,7 +52,7 @@ FrontPageControllers.controller('RealTimeAnalysisController',[
 
             // Set up the object to be ready for the request
             var articleRequested = new SentimentRequest({
-                apikey: "315505f383ab7bc362f60a8c663a51fe2381e71d",
+                apikey: $rootScope.alchemyApiKey,
                 flavor: "url",
                 url: $scope.requestUrl,
                 target: "to",
