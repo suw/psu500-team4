@@ -92,12 +92,14 @@ FrontPageControllers.controller('DashboardController',[
         var seriesOptions = [],
         yAxisOptions = [],
         seriesCounter = 0,
-        names = ['MSFT', 'AAPL', 'GOOG'],
+        names = ['Actual', 'Predicted'],
         colors = Highcharts.getOptions().colors;
 
         $.each(names, function(i, name) {
 
-            $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename='+ name.toLowerCase() +'-c.json&callback=?',   function(data) {
+            console.log('here');
+
+            $.getJSON('/site/fake-data/json/'+ name.toLowerCase() +'.json', function(data) {
 
                 seriesOptions[i] = {
                     name: name,
@@ -111,6 +113,9 @@ FrontPageControllers.controller('DashboardController',[
                 if (seriesCounter == names.length) {
                     createChart();
                 }
+            }).error( function(jqXHR, textStatus, errorThrown) {
+                console.log("error " + textStatus);
+                console.log("incoming Text " + jqXHR.responseText);
             });
         });
 
