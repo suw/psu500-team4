@@ -100,7 +100,6 @@ FrontPageControllers.controller('DashboardController',[
         colors = Highcharts.getOptions().colors;
 
         $.each(names, function(i, name) {
-
             $.getJSON('/site/fake-data/json/'+ name.toLowerCase() +'.json', function(data) {
                 dataSeriesOptions[i] = {
                     name: name,
@@ -118,8 +117,6 @@ FrontPageControllers.controller('DashboardController',[
                 console.log("incoming Text " + jqXHR.responseText);
             });
         });
-
-
 
         // Create data chart
         function createDataChart() {
@@ -158,71 +155,49 @@ FrontPageControllers.controller('DashboardController',[
             });
         }
 
-    }
 
         /**
-         * Display Correlation Data
+         * Display correlation data
          */
+        var myData;
+        var corrSeriesOptions = [];
 
-        /*
+        $.getJSON('/site/fake-data/json/jpm-corr.json', function(data) {
+            myData = data;
+            corrSeriesOptions[0] = {
+                name: 'Correlation',
+                data: data
+            };
 
-        $('#container').highcharts({
-            chart: {
-                zoomType: 'x'
-            },
-            title: {
-                text: 'USD to EUR exchange rate from 2006 through 2008'
-            },
-            subtitle: {
-                text: document.ontouchstart === undefined ?
-                    'Click and drag in the plot area to zoom in' :
-                    'Pinch the chart to zoom in'
-            },
-            xAxis: {
-                type: 'datetime',
-                minRange: 14 * 24 * 3600000 // fourteen days
-            },
-            yAxis: {
-                title: {
-                    text: 'Exchange rate'
-                }
-            },
-            legend: {
-                enabled: false
-            },
-            plotOptions: {
-                area: {
-                    fillColor: {
-                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
-                        stops: [
-                            [0, Highcharts.getOptions().colors[0]],
-                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                        ]
-                    },
-                    marker: {
-                        radius: 2
-                    },
-                    lineWidth: 1,
-                    states: {
-                        hover: {
-                            lineWidth: 1
-                        }
-                    },
-                    threshold: null
-                }
-            },
-
-            series: [{
-                type: 'area',
-                name: 'USD to EUR',
-                pointInterval: 24 * 3600 * 1000,
-                pointStart: Date.UTC(2006, 0, 01),
-                data: [
-                ]
-            }]
+            createCorrChart();
+        }).error( function(jqXHR, textStatus, errorThrown) {
+            console.log("error " + textStatus);
+            console.log("incoming Text " + jqXHR.responseText);
         });
-      }
-      */
+
+
+        var createCorrChart = function() {
+            angular.element('#data-corr').highcharts({
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Data Correlation'
+                },
+                xAxis: {
+                    type: 'datetime'
+                },
+                yAxis: {
+                     title: null,
+                     label: { enabled: false },
+                     offset: -20,
+                     min: -1,
+                     max: 1
+                },
+                series: corrSeriesOptions
+            });
+        }
+    }
 ]);
 
 FrontPageControllers.controller('SourceNYTController', [
