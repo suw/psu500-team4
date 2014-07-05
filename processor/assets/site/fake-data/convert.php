@@ -4,10 +4,11 @@ date_default_timezone_set('America/Los_Angeles');
 
 require_once('lib_convert.php');
 
-$data = csv_to_array('./data.csv');
+$data = csv_to_array('./raw-data.csv');
 
 $types = ['actual', 'predicted', 'jpm-corr'];
 
+$data = array_reverse($data);
 
 foreach ($types as $type) {
 
