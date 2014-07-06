@@ -60,27 +60,30 @@ var output = {};
 //Start the analysis chain
 //alchemyapi.entities(req, res, output);
 
-alchemyapi.entities('text', demo_text,{ 'sentiment':1 }, function(response) {
-  output['entities'] = { text:demo_text, response:JSON.stringify(response,null,4), results:response['entities'] };
+//∆
+alchemyapi.entities('url', demo_url,{ 'sentiment':1 }, function(response) {
+  output['entities'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['entities'] };
   //alchemyapi.keywords(req, res, output);
 });
 
-alchemyapi.keywords('text', demo_text, { 'sentiment':1 }, function(response) {
-  output['keywords'] = { text:demo_text, response:JSON.stringify(response,null,4), results:response['keywords'] };
+alchemyapi.keywords('url', demo_url, { 'sentiment':1 }, function(response) {
+  output['keywords'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['keywords'] };
   //alchemyapi.sentiment(req, res, output);
 });
 
-alchemyapi.sentiment_targeted('url',url,target,{}, function(response){
-  output['sentiment_targeted']= {target:target, url:url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
+alchemyapi.sentiment_targeted('url',demo_url,target,{}, function(response){
+  output['sentiment_targeted']= {target:target, url:demo_url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
 });
+
 /*
-alchemyapi.concepts('text', text, { 'showSourceText':1 }, function(response) {
-  output['concepts'] = { text:text, response:JSON.stringify(response,null,4), results:response['concepts'] };
+alchemyapi.concepts('url', demo_url, { 'showSourceText':1 }, function(response) {
+  output['concepts'] = { text:demo_url, response:JSON.stringify(response,null,4), results:response['concepts'] };
   alchemyapi.image_keywords(req, res, output);
 });
 */
-alchemyapi.sentiment('html', demo_html, {}, function(response) {
-	output['sentiment'] = { html:demo_html, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
+
+alchemyapi.sentiment('url', demo_url, {}, function(response) {
+	output['sentiment'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
 });
 
 alchemyapi.text('url', demo_url, {}, function(response) {
@@ -91,20 +94,20 @@ alchemyapi.author('url', demo_url, {}, function(response) {
 	output['author'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
 });
 
-alchemyapi.language('text', demo_text, {}, function(response) {
-	output['language'] = { text:demo_text, response:JSON.stringify(response,null,4), results:response };
+alchemyapi.language('url', demo_url, {}, function(response) {
+	output['language'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
 });
 
 alchemyapi.title('url', demo_url, {}, function(response) {
   output['title'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
 });
 
-alchemyapi.relations('text', demo_text, {}, function(response) {
-	output['relations'] = { text:demo_text, response:JSON.stringify(response,null,4), results:response['relations'] };
+alchemyapi.relations('url', demo_url, {}, function(response) {
+	output['relations'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['relations'] };
 });
 
-alchemyapi.category('text', demo_text, {}, function(response) {
-	output['category'] = { text:demo_text, response:JSON.stringify(response,null,4), results:response };
+alchemyapi.category('url', demo_url, {}, function(response) {
+	output['category'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
 });
 
 alchemyapi.feeds('url', demo_url, {}, function(response) {
