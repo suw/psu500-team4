@@ -24,6 +24,8 @@ var request = require('request');
 
 module.exports = {
 
+
+
 //========================================================================
 //========================================================================
 create:function(req,res,output){
@@ -45,23 +47,120 @@ var url = params.url;
 var target = params.target;
 var apikey = params.apikey;
 
+
+
 console.log(params);
 
-//targeted sentiment...
-alchemyapi.sentiment_targeted('url',url,target,{}, function(response){
-  output['sentiment_targeted']= {target:target, url:url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
-  console.log(output);
-  res.json(output.sentiment_targeted.results);
-  Sentiment.create(params, function(err,Sentiment){
+var demo_text = 'Yesterday dumb Bob destroyed my fancy iPhone in beautiful Denver, Colorado. I guess I will have to head over to the Apple Store and buy a new one.';
+var demo_url = url;
+var demo_html = '<html><head><title>Node.js Demo | AlchemyAPI</title></head><body><h1>Did you know that AlchemyAPI works on HTML?</h1><p>Well, you do now.</p></body></html>';
+
+var output = {};
+
+//Start the analysis chain
+//alchemyapi.entities(req, res, output);
+
+//∆
+alchemyapi.entities('url', demo_url,{ 'sentiment':1 }, function(response) {
+  output['entities'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['entities'] };
+  //alchemyapi.keywords(req, res, output);
+});
+
+alchemyapi.keywords('url', demo_url, { 'sentiment':1 }, function(response) {
+  output['keywords'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['keywords'] };
+  //alchemyapi.sentiment(req, res, output);
+});
+
+alchemyapi.sentiment_targeted('url',demo_url,target,{}, function(response){
+  output['sentiment_targeted']= {target:target, url:demo_url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
+});
+
+/*
+alchemyapi.concepts('url', demo_url, { 'showSourceText':1 }, function(response) {
+  output['concepts'] = { text:demo_url, response:JSON.stringify(response,null,4), results:response['concepts'] };
+  alchemyapi.image_keywords(req, res, output);
+});
+*/
+
+alchemyapi.sentiment('url', demo_url, {}, function(response) {
+	output['sentiment'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['docSentiment'] };
+});
+
+alchemyapi.text('url', demo_url, {}, function(response) {
+	output['text'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.author('url', demo_url, {}, function(response) {
+	output['author'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.language('url', demo_url, {}, function(response) {
+	output['language'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.title('url', demo_url, {}, function(response) {
+  output['title'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.relations('url', demo_url, {}, function(response) {
+	output['relations'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['relations'] };
+});
+
+alchemyapi.category('url', demo_url, {}, function(response) {
+	output['category'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.feeds('url', demo_url, {}, function(response) {
+	output['feeds'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['feeds'] };
+});
+
+alchemyapi.microformats('url', demo_url, {}, function(response) {
+	output['microformats'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response['microformats'] };
+});
+
+alchemyapi.taxonomy('url', demo_url, {}, function(response) {
+	output['taxonomy'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.combined('url', demo_url, {}, function(response) {
+	output['combined'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.image('url', demo_url, {}, function(response) {
+	output['image'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+});
+
+alchemyapi.image_keywords('url', demo_url, {}, function(response) {
+  output['image_keywords'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
+
+console.log("***************************************************");
+  console.log("first"+ output);
+
+  //send the response in json... one for Su...
+  //res.json(output.sentiment_targeted.results);
+
+  //and all for maxim..
+  //res.json(output);
+
+  //send to db...
+  Sentiment.create(output, function(err,Sentiment){
     if (err) return next(err);
     res.status(201);
     res.json(Sentiment);
+    console.log("***************************************************");
+    console.log(Sentiment);
   });
+/*
+Sentiment.create(output.text, function(err,Sentiment){
+  if (err) return next(err);
+  res.status(201);
+  res.json(Sentiment);
+  console.log("sentiment2"+Sentiment.toString());
+});
 
-  });
-
+*/
+});
 },
-
 //========================================================================
 //========================================================================
 read:function(req,res,next){
