@@ -12,16 +12,10 @@
 <tr><td rowspan="1" colspan="3">NYT Article Source Should Be Able To Load Data from API</td></tr>
 </thead><tbody>
 <tr>
-	<td>open</td>
-	<td>/site/#!/source-nyt/</td>
-	<td></td>
-</tr>
-<tr>
 	<td>assertElementPresent</td>
 	<td>css=div#collapse-0</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

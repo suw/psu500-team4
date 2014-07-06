@@ -18,7 +18,7 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>500</td>
+	<td>5000</td>
 	<td></td>
 </tr>
 <tr>
@@ -26,7 +26,6 @@
 	<td>css=div#collapse-0</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
