@@ -129,22 +129,33 @@ alchemyapi.image('url', demo_url, {}, function(response) {
 
 alchemyapi.image_keywords('url', demo_url, {}, function(response) {
   output['image_keywords'] = { url:demo_url, response:JSON.stringify(response,null,4), results:response };
-  res.render('sentimentpage',output);
 
-  console.log(output);
+console.log("***************************************************");
+  console.log("first"+ output);
 
   //send the response in json... one for Su...
-  res.json(output.sentiment_targeted.results);
+  //res.json(output.sentiment_targeted.results);
 
   //and all for maxim..
-  res.json(output);
+  //res.json(output);
 
   //send to db...
-  Sentiment.create(params, function(err,Sentiment){
+  Sentiment.create(output, function(err,Sentiment){
     if (err) return next(err);
     res.status(201);
     res.json(Sentiment);
+    console.log("***************************************************");
+    console.log(Sentiment);
   });
+/*
+Sentiment.create(output.text, function(err,Sentiment){
+  if (err) return next(err);
+  res.status(201);
+  res.json(Sentiment);
+  console.log("sentiment2"+Sentiment.toString());
+});
+
+*/
 });
 },
 //========================================================================
