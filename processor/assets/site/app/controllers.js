@@ -78,6 +78,10 @@ FrontPageControllers.controller('RealTimeAnalysisController',[
     }
 ]);
 
+/**
+ * Controller for /dashboard
+ *
+ */
 FrontPageControllers.controller('DashboardController',[
     '$scope',
     '$parse',
@@ -96,15 +100,27 @@ FrontPageControllers.controller('DashboardController',[
         var dataSeriesOptions = [],
         yAxisOptions = [],
         seriesCounter = 0,
-        names = ['Actual', 'Predicted'],
+        names = ['Actual', 'Predicted', "JPM-Corr"],
         colors = Highcharts.getOptions().colors;
 
         $.each(names, function(i, name) {
             $.getJSON('/site/fake-data/json/'+ name.toLowerCase() +'.json', function(data) {
-                dataSeriesOptions[i] = {
-                    name: name,
-                    data: data
-                };
+
+                if (name != "JPM-Corr") {
+                    dataSeriesOptions[i] = {
+                        name: name,
+                        data: data,
+                        yAxis: 0
+                    };
+                } else {
+                    // Correlation data should be display in separate yAxis
+                    dataSeriesOptions[i] = {
+                        name: 'Corr',
+                        data: data,
+                        yAxis: 1
+                    };
+                }
+
                 // As we're loading the data asynchronously, we don't know what order it will arrive. So
                 // we keep a counter and create the chart when all the data is loaded.
                 seriesCounter++;
@@ -112,14 +128,16 @@ FrontPageControllers.controller('DashboardController',[
                 if (seriesCounter == names.length) {
                     createDataChart();
                 }
+
             }).error( function(jqXHR, textStatus, errorThrown) {
+                // Uh oh, errors. Print out stuff for now.
                 console.log("error " + textStatus);
                 console.log("incoming Text " + jqXHR.responseText);
             });
         });
 
-        // Create data chart
-        function createDataChart() {
+        // Have the chart generation in separate call so we can wait for data to load
+        var createDataChart = function() {
 
             angular.element('#data').highcharts('StockChart', {
                 rangeSelector: {
@@ -127,20 +145,40 @@ FrontPageControllers.controller('DashboardController',[
                     selected: 4
                 },
 
-                yAxis: {
-                    labels: {
-                        formatter: function() {
-                            return (this.value > 0 ? '+' : '') + this.value + '%';
-                        }
+                yAxis: [
+                    {
+                        // yAxis settings for the comparison data
+                        title: {
+                            text: 'Actual vs Predicted'
+                        },
+                        labels: {
+                            formatter: function() {
+                                return (this.value > 0 ? '+' : '') + this.value + '%';
+                            }
+                        },
+                        height: 300,
+                        lineWidth: 2,
+                        plotLines: [{
+                            value: 0,
+                            width: 2,
+                            color: 'silver'
+                        }]
                     },
-                    plotLines: [{
-                        value: 0,
-                        width: 2,
-                        color: 'silver'
-                    }]
-                },
+                    {
+                        // yAxis settings for the correlation data
+                        title: {
+                            text: 'Correlation'
+                        },
+                        top: 350,
+                        height: 100,
+                        offset: -30,
+                        lineWidth: 0,
+                        min: -1,
+                        max: 1
+                    }
+                ],
 
-                plotOptions: {
+                ploOptions: {
                     series: {
                         compare: 'percent'
                     }
@@ -152,49 +190,6 @@ FrontPageControllers.controller('DashboardController',[
                 },
 
                 series: dataSeriesOptions
-            });
-        }
-
-
-        /**
-         * Display correlation data
-         */
-        var myData;
-        var corrSeriesOptions = [];
-
-        $.getJSON('/site/fake-data/json/jpm-corr.json', function(data) {
-            myData = data;
-            corrSeriesOptions[0] = {
-                name: 'Correlation',
-                data: data
-            };
-
-            createCorrChart();
-        }).error( function(jqXHR, textStatus, errorThrown) {
-            console.log("error " + textStatus);
-            console.log("incoming Text " + jqXHR.responseText);
-        });
-
-
-        var createCorrChart = function() {
-            angular.element('#data-corr').highcharts({
-                chart: {
-                    type: 'spline'
-                },
-                title: {
-                    text: 'Data Correlation'
-                },
-                xAxis: {
-                    type: 'datetime'
-                },
-                yAxis: {
-                     title: null,
-                     label: { enabled: false },
-                     offset: -20,
-                     min: -1,
-                     max: 1
-                },
-                series: corrSeriesOptions
             });
         }
     }
