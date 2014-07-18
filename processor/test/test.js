@@ -6,6 +6,13 @@ to run tests: npm test (or mocha test)
 var should = require('should');
 var assert = require("assert");
 var Database = "";
+var Sentiment = require("../api/controllers/SentimentController.js");
+var AlchemyAPI = require('../alchemyapi');
+var alchemyapi = new AlchemyAPI();
+
+var demo_text = 'Yesterday dumb Bob destroyed my fancy iPhone in beautiful Denver, Colorado. I guess I will have to head over to the Apple Store and buy a new one.';
+var demo_url = 'www.nytimes.com';
+var demo_html = '<html><head><title>Node.js Demo | AlchemyAPI</title></head><body><h1>Did you know that AlchemyAPI works on HTML?</h1><p>Well, you do now.</p></body></html>';
 
 //===========================================================================================
 //mocha positive test...
@@ -107,12 +114,11 @@ Output of API
 Article unique identifier
 */
 //database should contain, for each processed article: Timestamp of processing
-describe('Database',function(){
-	describe('Timestamp',function(){
+describe('Sentiment',function(){
+	describe('Sentiment',function(){
 		it('should contain, for each processed article: Timestamp of processing', function(){
-			var processedArticle = "1";
-			var Timestamp = "";
-			assert.equal(processedArticle,Timestamp);
+			var processedArticle = Sentiment.createdAt;
+			assert.exists(processedArticle);
 		})
 	})
 })
@@ -209,6 +215,35 @@ describe('display',function(){
 //===========================================================================================
 /*Testing Targeted Sentiment functionality*/
 //Targeted Sentiment
+
+
+describe('sentiment_targeted',function(){
+    it('should display the selected sentiment_targeted data', function(done){
+console.log('Checking targeted sentiment . . . ');
+alchemyapi.sentiment_targeted('text', demo_text, null, null, function(response) {
+  assert.equal(response['status'],'ERROR');	//did not supply the target
+    })
+  })
+})
+
+describe('sentiment_targeted',function(){
+    it('should display the selected sentiment_targeted data', function(done){
+console.log('Checking targeted sentiment . . . ');
+alchemyapi.sentiment_targeted('random', demo_text, 'heart', null, function(response) {
+  assert.equal(response['status'],'ERROR');	//invalid flavor
+    })
+  })
+})
+
+describe('sentiment_targeted',function(){
+    it('should display the selected sentiment_targeted data', function(done){
+console.log('Checking targeted sentiment . . . ');
+alchemyapi.sentiment_targeted('text', demo_text, 'heart', null, function(response) {
+  assert.equal(response['status'],'OK');
+    })
+  })
+})
+
 function sentiment_targeted() {
 	console.log('Checking targeted sentiment . . . ');
 	alchemyapi.sentiment_targeted('text', test_text, null, null, function(response) {
