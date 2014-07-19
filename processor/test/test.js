@@ -17,7 +17,10 @@ var test_html = '<html><head><title>The best SDK Test | AlchemyAPI</title></head
 var test_url = 'http://www.nytimes.com/2013/07/13/us/politics/a-day-of-friction-notable-even-for-a-fractious-congress.html?_r=0';
 var test_image = 'test/emaxfpo.jpg';
 
+
+//===========================SentimentController.Create()=======================
 describe('Create:',function(){
+
 //Entities
 describe('entities',function() {
 	console.log('Checking entities . . . ');
@@ -35,12 +38,12 @@ describe('entities',function() {
 					assert.equal(response['status'],'OK');
 					console.log('Entity tests complete!\n');
 					done();
-				});
-			});
-		});
-	});
-});
-});
+				})
+			})
+		})
+	})
+})
+})
 
 
 //Keywords
@@ -422,4 +425,21 @@ describe('combined', function() {
 });
 });
 
-});  //end create...
+});
+//end create();
+//==============================================================================
+
+
+//===========================SentimentController.Read()=========================
+
+//end read();
+//==============================================================================
+
+
+//===========================SentimentController.Update()=======================
+
+//end update();
+//==============================================================================
+
+//end destroy();
+//===========================SentimentController.Destroy()======================
