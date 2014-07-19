@@ -15,9 +15,9 @@ var alchemyapi = new AlchemyAPI();
 var test_text = 'Bob broke my heart, and then made up this silly sentence to test the Node.js SDK';
 var test_html = '<html><head><title>The best SDK Test | AlchemyAPI</title></head><body><h1>Hello World!</h1><p>My favorite language is Javascript</p></body></html>';
 var test_url = 'http://www.nytimes.com/2013/07/13/us/politics/a-day-of-friction-notable-even-for-a-fractious-congress.html?_r=0';
-var test_image = './emaxfpo.jpg';
+var test_image = 'test/emaxfpo.jpg';
 
-
+describe('Create:',function(){
 //Entities
 describe('entities',function() {
 	console.log('Checking entities . . . ');
@@ -421,3 +421,5 @@ describe('combined', function() {
 	});
 });
 });
+
+});  //end create...
