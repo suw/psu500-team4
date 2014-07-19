@@ -419,9 +419,6 @@ describe('combined', function() {
 		assert.equal(response['status'],'OK');
 		console.log('Combined tests complete!\n');
 
-		console.log('\n\n**** All tests are complete! ****\n');
-		done();
-	});
 });
 });
 
@@ -432,14 +429,82 @@ describe('combined', function() {
 
 //===========================SentimentController.Read()=========================
 
+describe('Read:',function(){
+
+//Find One
+describe('find one', function(){
+	console.log('Checking findOne...');
+   it('should check findOne', function(done){
+   	sentiment.findOne('id', function(err,Sentiment){
+   		assert.equal(response['status'],'OK');
+   		console.log('Find One tests complete!\n');
+   		
+//Find
+desribe('find', function(){
+	console.log('Checking find...');
+   it('should check find', function(done){
+   	sentiment.find('options', function(err,Sentiment){
+   		assert.equal(response['status'], 'OK');
+   		console.log('Find tests complete!\n');
+   	}
+   }	
+}
+   	}
+   }		
+}
 //end read();
 //==============================================================================
 
 
 //===========================SentimentController.Update()=======================
 
+describe('Update:', function(){
+	
+//Update
+describe('update', function(){
+	console.log('Checking update...');
+   it('should check update', function(done){
+   	sentiment.update('id','criteria', function(err,Sentiment){
+   		assert.equal(response['status'], 'OK');
+   		console.log('Update tests complete!\n');
+   	}
+   }
+}
+}
 //end update();
 //==============================================================================
 
-//end destroy();
+
 //===========================SentimentController.Destroy()======================
+
+describe('Destroy:', function(){
+	
+//Destroy
+describe('destroy', function(){
+	console.log('Checking destroy...');
+   it('should check destroy', function(done){
+   	sentiment.destroy('id', function(err,result){
+   		assert.equal(response['status'], 'OK');
+   		console.log('Destroy tests complete!\n');
+   	}
+   }
+}
+//end destroy();
+	
+console.log('\n\n**** All tests are complete! ****\n');
+		done();
+}
+	});	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
