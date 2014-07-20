@@ -433,7 +433,7 @@ describe('combined', function() {
 describe('Read:',function(){
 
 //Find One
-describe('find one', function(){
+describe('findOne', function(){
 	console.log('Checking findOne...');
    it('should check findOne', function(done){
    	Sentiment.findOne('id', function(err,Sentiment){
