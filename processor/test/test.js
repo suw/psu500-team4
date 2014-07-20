@@ -436,7 +436,7 @@ describe('Read:',function(){
 describe('find one', function(){
 	console.log('Checking findOne...');
    it('should check findOne', function(done){
-   	sentiment.findOne('id', function(err,Sentiment){
+   	Sentiment.findOne('id', function(err,Sentiment){
    		assert.equal(response['status'],'OK');
    		console.log('Find One tests complete!\n');
 
@@ -444,7 +444,7 @@ describe('find one', function(){
 desribe('find', function(){
 	console.log('Checking find...');
    it('should check find', function(done){
-   	sentiment.find('options', function(err,Sentiment){
+   	Sentiment.find('options', function(err,Sentiment){
    		assert.equal(response['status'], 'OK');
    		console.log('Find tests complete!\n');
 			done();
@@ -468,7 +468,7 @@ describe('Update:', function(){
 describe('update', function(){
 	console.log('Checking update...');
    it('should check update', function(done){
-   	sentiment.update('id','criteria', function(err,Sentiment){
+   	Sentiment.update('id','criteria', function(err,Sentiment){
    		assert.equal(response['status'], 'OK');
    		console.log('Update tests complete!\n');
 			done();
@@ -488,7 +488,7 @@ describe('Destroy:', function(){
 describe('destroy', function(){
 	console.log('Checking destroy...');
    it('should check destroy', function(done){
-   	sentiment.destroy('id', function(err,result){
+   	Sentiment.destroy('id', function(err,result){
    		assert.equal(response['status'], 'OK');
    		console.log('Destroy tests complete!\n');
 			done();
