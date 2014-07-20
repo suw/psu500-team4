@@ -38,12 +38,12 @@ describe('entities',function() {
 					assert.equal(response['status'],'OK');
 					console.log('Entity tests complete!\n');
 					done();
-				})
-			})
-		})
-	})
-})
-})
+				});
+			});
+		});
+	});
+});
+});
 
 
 //Keywords
@@ -426,6 +426,7 @@ describe('combined', function() {
 });
 
 });
+
 //end create();
 //==============================================================================
 
