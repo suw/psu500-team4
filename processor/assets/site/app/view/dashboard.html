@@ -21,19 +21,15 @@
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                <a href="#" class="list-group-item active">
-                    <span class="badge">
+                <a href="/site/#!/dashboard/{{displaySymbol.symbol}}"
+                    ng-repeat="displaySymbol in allSymbols"
+                    ng-class="{active: symbol == displaySymbol.symbol}"
+                    class="list-group-item">
+                    {{displaySymbol.name | textLimiter}}
+                    <span class="badge" ng-show="symbol == displaySymbol.symbol">
                         <i class="fa fa-arrow-right"></i>
                     </span>
-                   JPM &mdash; JPMorgan Chase
                 </a>
-                <a href="#" class="list-group-item">
-                   MSFT - Microsoft
-                </a>
-
-            </div>
-            <div style="text-align:center">
-                <a href="#"><i class="fa fa-refresh"></i> Refresh</a>
             </div>
         </div>
         <div class="col-md-9">

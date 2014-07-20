@@ -94,28 +94,44 @@ FrontPageControllers.controller('DashboardController',[
         $routeParams
     ) {
 
+        // Get symbol from the route. Default to JPM
+        var symbol = ('symbol' in $routeParams) ? $routeParams.symbol : 'jpm';
+        $scope.symbol = symbol;
+
+        // Symbol : name
+        $scope.allSymbols = [
+            {
+                'symbol' : "jpm",
+                'name' : "JPM - JPMorgan Chase",
+            },
+            {
+                'symbol' : "ms",
+                'name' : "MS - Morgan Stanley",
+            }
+        ];
+
         /**
          * Display data
          */
         var dataSeriesOptions = [],
         yAxisOptions = [],
         seriesCounter = 0,
-        names = ['Actual', 'Predicted', "JPM-Corr"],
+        names = ['Price', 'Forecast', "F1", "F2", "F3"],
         colors = Highcharts.getOptions().colors;
 
         $.each(names, function(i, name) {
-            $.getJSON('/site/fake-data/json/'+ name.toLowerCase() +'.json', function(data) {
+            $.getJSON('/site/fake-data/json/' + symbol + '-'+ name.toLowerCase() +'.json', function(data) {
 
-                if (name != "JPM-Corr") {
+                if (name != 'F3') {
                     dataSeriesOptions[i] = {
                         name: name,
                         data: data,
                         yAxis: 0
                     };
                 } else {
-                    // Correlation data should be display in separate yAxis
+                    // F3 data should be display in separate yAxis
                     dataSeriesOptions[i] = {
-                        name: 'Corr',
+                        name: 'F3',
                         data: data,
                         yAxis: 1
                     };
@@ -149,7 +165,7 @@ FrontPageControllers.controller('DashboardController',[
                     {
                         // yAxis settings for the comparison data
                         title: {
-                            text: 'Actual vs Predicted'
+                            text: 'Actual vs Forecast'
                         },
                         labels: {
                             formatter: function() {
@@ -167,14 +183,12 @@ FrontPageControllers.controller('DashboardController',[
                     {
                         // yAxis settings for the correlation data
                         title: {
-                            text: 'Correlation'
+                            text: 'F3'
                         },
                         top: 350,
                         height: 100,
                         offset: -30,
-                        lineWidth: 0,
-                        min: -1,
-                        max: 1
+                        lineWidth: 0
                     }
                 ],
 
@@ -227,9 +241,9 @@ FrontPageControllers.controller('SourceNYTController', [
             // Send off the request and handle the response data
             articleRequested.$save(
                 function(response) {
-                    if (response.type == 'negative' || response.type == 'positive') {
-                        $scope.data.response.docs[index].sentiment = response.type;
-                        $scope.data.response.docs[index].score = response.score;
+                    if (response.sentiment.results.type == 'negative' || response.sentiment.results.type == 'positive') {
+                        $scope.data.response.docs[index].sentiment = response.sentiment.results.type;
+                        $scope.data.response.docs[index].score = response.sentiment.results.score;
                         angular.element('#collapse-'+index).collapse('show');
                     } else {
                         $scope.dataGrabError = true;
@@ -319,9 +333,9 @@ FrontPageControllers.controller('RSSDataFeedController', [
             articleRequested.$save(
                 function(response) {
 
-                    if (response.type == 'negative' || response.type == 'positive') {
-                        $scope.feeds[index].sentiment = response.type;
-                        $scope.feeds[index].score = response.score;
+                    if (response.sentiment.results.type == 'negative' || response.sentiment.results.type == 'positive') {
+                        $scope.feeds[index].sentiment = response.sentiment.results.type;
+                        $scope.feeds[index].score = response.sentiment.results.score;
                         angular.element('#collapse-'+index).collapse('show');
                     } else {
                         $scope.dataGrabError = true;
