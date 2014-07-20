@@ -26,7 +26,7 @@ predictlyApp.config([
         {
             templateUrl: 'app/view/frontpage.html'
         })
-        .when('/dashboard/',
+        .when('/dashboard/:symbol?',
         {
             controller: 'DashboardController',
             templateUrl: 'app/view/dashboard.html'

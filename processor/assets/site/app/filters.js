@@ -10,8 +10,8 @@ var DisplayFilters = angular.module('DisplayFilters', []);
 
 DisplayFilters.filter('textLimiter', function() {
     return function(input) {
-        if (input.length > 30) {
-            input.substring(0, 27) + '...';
+        if (input.length > 25) {
+            return input.substring(0, 23) + '...';
         } else {
             return input;
         }
