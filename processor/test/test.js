@@ -418,7 +418,7 @@ describe('combined', function() {
 	alchemyapi.combined('url', test_url, null, function(response) {
 		assert.equal(response['status'],'OK');
 		console.log('Combined tests complete!\n');
-
+		done();
 });
 });
 
@@ -447,12 +447,14 @@ desribe('find', function(){
    	sentiment.find('options', function(err,Sentiment){
    		assert.equal(response['status'], 'OK');
    		console.log('Find tests complete!\n');
-   	}
-   }
+			done();
+   	});
+   });
 
-   	}
-   }
-}
+});
+   });
+});
+});
 //end read();
 //==============================================================================
 
@@ -468,10 +470,11 @@ describe('update', function(){
    	sentiment.update('id','criteria', function(err,Sentiment){
    		assert.equal(response['status'], 'OK');
    		console.log('Update tests complete!\n');
-   	}
-   }
-}
-}
+			done();
+   	});
+   });
+});
+});
 //end update();
 //==============================================================================
 
@@ -487,25 +490,13 @@ describe('destroy', function(){
    	sentiment.destroy('id', function(err,result){
    		assert.equal(response['status'], 'OK');
    		console.log('Destroy tests complete!\n');
-   	}
-   }
-}
+			done();
+   	});
+   });
+});
 //end destroy();
 
 console.log('\n\n**** All tests are complete! ****\n');
-		done();
-}
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-}
+});
+});
