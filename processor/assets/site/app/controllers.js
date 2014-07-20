@@ -241,9 +241,9 @@ FrontPageControllers.controller('SourceNYTController', [
             // Send off the request and handle the response data
             articleRequested.$save(
                 function(response) {
-                    if (response.type == 'negative' || response.type == 'positive') {
-                        $scope.data.response.docs[index].sentiment = response.type;
-                        $scope.data.response.docs[index].score = response.score;
+                    if (response.sentiment.type == 'negative' || response.sentiment.type == 'positive') {
+                        $scope.data.response.docs[index].sentiment = response.sentiment.type;
+                        $scope.data.response.docs[index].score = response.sentiment.score;
                         angular.element('#collapse-'+index).collapse('show');
                     } else {
                         $scope.dataGrabError = true;
@@ -333,9 +333,9 @@ FrontPageControllers.controller('RSSDataFeedController', [
             articleRequested.$save(
                 function(response) {
 
-                    if (response.type == 'negative' || response.type == 'positive') {
-                        $scope.feeds[index].sentiment = response.type;
-                        $scope.feeds[index].score = response.score;
+                    if (response.sentiment.type == 'negative' || response.sentiment.type == 'positive') {
+                        $scope.feeds[index].sentiment = response.sentiment.type;
+                        $scope.feeds[index].score = response.sentiment.score;
                         angular.element('#collapse-'+index).collapse('show');
                     } else {
                         $scope.dataGrabError = true;
