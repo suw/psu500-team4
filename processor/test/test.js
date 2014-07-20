@@ -439,7 +439,7 @@ describe('find one', function(){
    	sentiment.findOne('id', function(err,Sentiment){
    		assert.equal(response['status'],'OK');
    		console.log('Find One tests complete!\n');
-   		
+
 //Find
 desribe('find', function(){
 	console.log('Checking find...');
@@ -448,10 +448,10 @@ desribe('find', function(){
    		assert.equal(response['status'], 'OK');
    		console.log('Find tests complete!\n');
    	}
-   }	
-}
+   }
+
    	}
-   }		
+   }
 }
 //end read();
 //==============================================================================
@@ -460,7 +460,7 @@ desribe('find', function(){
 //===========================SentimentController.Update()=======================
 
 describe('Update:', function(){
-	
+
 //Update
 describe('update', function(){
 	console.log('Checking update...');
@@ -479,7 +479,7 @@ describe('update', function(){
 //===========================SentimentController.Destroy()======================
 
 describe('Destroy:', function(){
-	
+
 //Destroy
 describe('destroy', function(){
 	console.log('Checking destroy...');
@@ -491,21 +491,21 @@ describe('destroy', function(){
    }
 }
 //end destroy();
-	
+
 console.log('\n\n**** All tests are complete! ****\n');
 		done();
 }
-	});	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	});
+
+
+
+
+
+
+
+
+
+
+
+
 }
