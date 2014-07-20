@@ -455,6 +455,7 @@ desribe('find', function(){
    });
 });
 });
+});
 //end read();
 //==============================================================================
 
@@ -498,5 +499,4 @@ describe('destroy', function(){
 
 console.log('\n\n**** All tests are complete! ****\n');
 	});
-});
 });
