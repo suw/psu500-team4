@@ -423,7 +423,7 @@ describe('combined', function() {
 });
 
 });
-
+});
 //end create();
 //==============================================================================
 
@@ -499,4 +499,3 @@ describe('destroy', function(){
 
 console.log('\n\n**** All tests are complete! ****\n');
 	});
-});
