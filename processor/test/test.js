@@ -440,7 +440,7 @@ describe('findOne', function(){
    	Sentiment.findOne('id', function(err,Sentiment){
    		assert.equal(response['status'],'OK');
    		console.log('Find One tests complete!\n');
-   	}   		
+   	});
 });
 
 //Find
@@ -458,7 +458,7 @@ desribe('find', function(){
    });
 });
 });
-});
+
 //end read();
 //==============================================================================
 
