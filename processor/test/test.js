@@ -38,12 +38,12 @@ describe('entities',function() {
 					assert.equal(response['status'],'OK');
 					console.log('Entity tests complete!\n');
 					done();
-				})
-			})
-		})
-	})
-})
-})
+				});
+			});
+		});
+	});
+});
+});
 
 
 //Keywords
@@ -418,10 +418,11 @@ describe('combined', function() {
 	alchemyapi.combined('url', test_url, null, function(response) {
 		assert.equal(response['status'],'OK');
 		console.log('Combined tests complete!\n');
-
+		done();
 });
 });
 
+});
 });
 //end create();
 //==============================================================================
@@ -432,26 +433,32 @@ describe('combined', function() {
 describe('Read:',function(){
 
 //Find One
-describe('find one', function(){
+describe('findOne', function(){
 	console.log('Checking findOne...');
    it('should check findOne', function(done){
-   	sentiment.findOne('id', function(err,Sentiment){
+   	alchemyapi.read('id', null, function(response){
+   	Sentiment.findOne('id', function(err,Sentiment){
    		assert.equal(response['status'],'OK');
    		console.log('Find One tests complete!\n');
-   		
+   	});
+});
+
 //Find
 desribe('find', function(){
 	console.log('Checking find...');
    it('should check find', function(done){
-   	sentiment.find('options', function(err,Sentiment){
+   	Sentiment.find('options', function(err,Sentiment){
    		assert.equal(response['status'], 'OK');
    		console.log('Find tests complete!\n');
-   	}
-   }	
-}
-   	}
-   }		
-}
+			done();
+   	});
+   });
+
+});
+   });
+});
+});
+
 //end read();
 //==============================================================================
 
@@ -459,18 +466,19 @@ desribe('find', function(){
 //===========================SentimentController.Update()=======================
 
 describe('Update:', function(){
-	
+
 //Update
 describe('update', function(){
 	console.log('Checking update...');
    it('should check update', function(done){
-   	sentiment.update('id','criteria', function(err,Sentiment){
+   	Sentiment.update('id','criteria', function(err,Sentiment){
    		assert.equal(response['status'], 'OK');
    		console.log('Update tests complete!\n');
-   	}
-   }
-}
-}
+			done();
+   	});
+   });
+});
+});
 //end update();
 //==============================================================================
 
@@ -478,33 +486,19 @@ describe('update', function(){
 //===========================SentimentController.Destroy()======================
 
 describe('Destroy:', function(){
-	
+
 //Destroy
 describe('destroy', function(){
 	console.log('Checking destroy...');
    it('should check destroy', function(done){
-   	sentiment.destroy('id', function(err,result){
+   	Sentiment.destroy('id', function(err,result){
    		assert.equal(response['status'], 'OK');
    		console.log('Destroy tests complete!\n');
-   	}
-   }
-}
+			done();
+   	});
+   });
+});
 //end destroy();
-	
+
 console.log('\n\n**** All tests are complete! ****\n');
-		done();
-}
-	});	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
+	});
