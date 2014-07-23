@@ -6,4 +6,4 @@
 .DS_Store
 
 # SASS
-assets/site/assets/.sass-cache/
+processor/assets/site/assets/.sass-cache

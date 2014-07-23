@@ -8,3 +8,54 @@ div {
     margin-bottom: 10px;
   }
 }
+
+/**
+ * Dashboard
+ */
+
+ #dashboard {
+
+   .last-updated {
+      padding-top: 10px;
+      font-size: 0.8em;
+   }
+
+   .sentiment-display {
+     padding-left: 10px;
+     .fa-long-arrow-up {
+        font-size: 2.5em;
+        color: #3c763d;
+     }
+     .fa-long-arrow-down {
+       font-size: 2.5em;
+       color: #a94442;
+     }
+   }
+
+   // Panel for displaying company list
+   .panel {
+     margin-bottom: 4px;
+   }
+   .panel-primary {
+     .panel-heading {
+       a {
+         color: #fff;
+       }
+       .badge {
+         background-color: #fff;
+         color: #2c3e50;
+       }
+     }
+   }
+   .panel-info {
+     .panel-heading {
+       a {
+         color: #555;
+       }
+       background-color: #fff;
+       border-bottom: 1px solid #ecf0f1;
+     }
+
+     border: 1px solid #ecf0f1;
+   }
+}

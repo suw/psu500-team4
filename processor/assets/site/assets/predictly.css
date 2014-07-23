@@ -4,3 +4,32 @@ body {
 
 div .bottom-spaced {
   margin-bottom: 10px; }
+
+/**
+ * Dashboard
+ */
+#dashboard .last-updated {
+  padding-top: 10px;
+  font-size: 0.8em; }
+#dashboard .sentiment-display {
+  padding-left: 10px; }
+  #dashboard .sentiment-display .fa-long-arrow-up {
+    font-size: 2.5em;
+    color: #3c763d; }
+  #dashboard .sentiment-display .fa-long-arrow-down {
+    font-size: 2.5em;
+    color: #a94442; }
+#dashboard .panel {
+  margin-bottom: 4px; }
+#dashboard .panel-primary .panel-heading a {
+  color: #fff; }
+#dashboard .panel-primary .panel-heading .badge {
+  background-color: #fff;
+  color: #2c3e50; }
+#dashboard .panel-info {
+  border: 1px solid #ecf0f1; }
+  #dashboard .panel-info .panel-heading {
+    background-color: #fff;
+    border-bottom: 1px solid #ecf0f1; }
+    #dashboard .panel-info .panel-heading a {
+      color: #555; }
