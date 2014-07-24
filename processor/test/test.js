@@ -436,10 +436,12 @@ describe('Read:',function(){
 describe('findOne', function(){
 	console.log('Checking findOne...');
    it('should check findOne', function(done){
-   	alchemyapi.read('id', null, function(response){
-   	Sentiment.findOne('id', function(err,Sentiment){
-   		assert.equal(response['status'],'OK');
-   		console.log('Find One tests complete!\n');
+   	//alchemyapi.read('id', null, function(response){
+   	assert.equal(response['status'], 'ERROR'); //invalid something
+   	alchemyapi.findOne('id', function(err,Sentiment){
+   	//Sentiment.findOne('id', function(err,Sentiment){
+   	assert.equal(response['status'],'OK');
+   	console.log('Find One tests complete!\n');
    	});
 });
 
