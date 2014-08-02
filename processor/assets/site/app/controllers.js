@@ -98,18 +98,24 @@ function(
   var symbol = ('symbol' in $routeParams) ? $routeParams.symbol : 'jpm';
   $scope.symbol = symbol;
   $scope.forecastedChange;
+  $scope.lastUpdatedDate = new Date();
 
   // Symbol : name
   $scope.allSymbols = [
-  {
-    'symbol' : "jpm",
-    'name' : "JPM - JPMorgan Chase",
-  },
-  {
-    'symbol' : "ms",
-    'name' : "MS - Morgan Stanley",
-  }
-  ];
+      {"symbol":"jpm","name":"JPM - JPMorgan Chase"},
+      {"symbol":"ms","name":"MS - Morgan Stanley"},
+      {"symbol":"c","name":"C - Citigroup"},
+      {"symbol":"bcs","name":"BCS - Barclays"},
+      {"symbol":"bac","name":"BAC - Bank of America"},
+      {"symbol":"ubs","name":"UBS - UBS"},
+      {"symbol":"aapl","name":"AAPL - Apple"},
+      {"symbol":"db","name":"DB - Deutsche Bank"},
+      {"symbol":"fb","name":"FB - Facebook"},
+      {"symbol":"goog","name":"GOOG - Google"},
+      {"symbol":"gm","name":"GM - General Motors"},
+      {"symbol":"gs","name":"GS - Goldman Sachs"},
+      {"symbol":"hsbc","name":"HSBC - HSBC"}
+    ];
 
   /**
   * Display data
