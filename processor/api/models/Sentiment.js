@@ -8,12 +8,18 @@
 
 module.exports = {
 
+mongo: {
+    module  : 'sails-mongo',
+    host     : 'localhost',
+    port     : 27017,
+    user     : '',
+    password : '',
+    database : 'local'
+},
+
   attributes: {
 
-  	/* e.g.
-  	nickname: 'string'
-  	*/
+}
 
-  }
 
 };
