@@ -8,12 +8,12 @@
 
 module.exports = {
 
-  attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
-  }
+adapter  : 'mysql',
+
+    attributes: {
+
+
+
+    }
 
 };
