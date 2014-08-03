@@ -51,6 +51,14 @@ module.exports.routes = {
 
   'delete /sentiment': 'SentimentController.destroy',
 
+  'get /main': 'MainController.find',
+
+  'put /main': 'MainController.update',
+
+  'post /main':'MainController.create',
+
+  'delete /main': 'MainController.destroy',
+
   'post /analyze': 'SentimentController.create'
   //***********************************************************************
   //***********************************************************************

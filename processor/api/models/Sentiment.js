@@ -8,12 +8,13 @@
 
 module.exports = {
 
+
   adapter:'mongo',
 
   attributes: {
 
 
+}
 
-  }
 
 };

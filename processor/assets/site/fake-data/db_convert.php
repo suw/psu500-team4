@@ -6,14 +6,43 @@
  * @author Su Wang <sxw323@psu.edu>
  */
 
-$link = mysqli_connect("host320.hostmonster.com","fivninni_apikids","makeitw0rk","fivninni_sweng500") or die("Error " . mysqli_error($link));
-
+#$link = mysqli_connect("host320.hostmonster.com","fivninni_apikids","makeitw0rk","fivninni_sweng500") or die("Error " . mysqli_error($link));
 
 /*
  * Logic:
  *  For each symbol, generate one file for each column
  */
-$symbols = ['jpm', 'ms'];
+$symbols = [
+    'JPM',
+    'MS',
+    'C',
+    'BCS',
+    'BAC',
+    'UBS',
+    'AAPL',
+    'DB',
+    'FB',
+    'GOOG',
+    'GM',
+    'GS',
+    'HSBC'
+];
+
+
+$symbolOutArray = [];
+
+foreach ($symbols as $symbol) {
+    $symbolOutArray[] = array(
+        'file' => strtolower($symbol),
+        'name' => $symbol . " - "
+    );
+}
+
+echo json_encode($symbolOutArray);
+
+exit;
+
+$symbols = array_map('strtolower', $symbols);
 $columns = ['price', 'forecast', 'F1', 'F2', 'F3'];
 
 foreach ($symbols as $symbol) {
