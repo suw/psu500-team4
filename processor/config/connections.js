@@ -12,8 +12,7 @@
  * http://sailsjs.org/#documentation
  */
 
-module.exports.adapters = {
-    'default': 'mongo',
+module.exports.connections = {
 
     mongo: {
         adapter  : 'sails-mongo',
