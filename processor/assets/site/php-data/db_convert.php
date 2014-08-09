@@ -38,10 +38,6 @@ foreach ($symbols as $symbol) {
     );
 }
 
-echo json_encode($symbolOutArray);
-
-exit;
-
 $symbols = array_map('strtolower', $symbols);
 $columns = ['price', 'forecast', 'F1', 'F2', 'F3'];
 
