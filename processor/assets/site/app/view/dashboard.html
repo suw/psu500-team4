@@ -27,18 +27,28 @@
         </span>
       </div>
       <div class="panel-body" ng-show="symbol == displaySymbol.symbol">
-        <div class="sentiment-display">
+        <div class="sentiment-display" ng-hide="isLoading">
           <i ng-show="forecastedChange > 0" class="pull-left fa fa-long-arrow-up"></i>
           <i ng-show="forecastedChange <= 0" class="pull-left fa fa-long-arrow-down"></i>
           <h4 class="pull-left">{{forecastedChange}} <small>forecasted</small></h4>
         </div>
-
         <div class="clearfix"></div>
-        <div class="last-updated">Last updated {{lastUpdatedDate | date:'yyyy-MM-dd'}}</div>
+        <div class="last-updated" ng-hide="isLoading">
+          Last updated {{lastUpdatedDate | date:'yyyy-MM-dd'}}
+        </div>
+        <div class="last-updated" ng-show="isLoading">
+          Loading...
+        </div>
       </div>
     </div>
   </div>
   <div class="col-md-9">
+    <div ng-show="isLoading">
+        <h1>Loading...</h1>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" style="width: 100%"></div>
+        </div>
+    </div>
     <div id="data" style="height: 500px; min-width: 500px"></div>
   </div>
 </div>

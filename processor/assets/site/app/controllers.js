@@ -125,12 +125,13 @@ function(
   seriesCounter = 0,
   names = ['Price', 'Forecast', "F1", "F2", "F3"],
   colors = Highcharts.getOptions().colors;
+  $scope.isLoading = true;
 
   var dayForecast = 0;
   var dayPrice = 0;
 
   $.each(names, function(i, name) {
-    $.getJSON('/site/fake-data/json/' + symbol + '-'+ name.toLowerCase() +'.json', function(data) {
+    $.getJSON('/site/php-data/db_live.php?symbol=' + symbol.toUpperCase() + '&column='+ name.toLowerCase(), function(data) {
 
       if (name != 'F3') {
         dataSeriesOptions[i] = {
@@ -176,6 +177,7 @@ function(
   var createDataChart = function() {
 
     $scope.forecastedChange = (dayForecast - dayPrice).toFixed(2);
+    $scope.isLoading = false;
     $scope.$apply();
 
     angular.element('#data').highcharts('StockChart', {
