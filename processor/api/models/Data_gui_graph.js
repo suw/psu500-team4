@@ -24,7 +24,7 @@ autoUpdatedAt: false,
           F1:{type:'float',columnName:'F1'},
           F2:{type:'float',columnName:'F2'},
           F3:{type:'float',columnName:'F3'},
-          correlation:{type:'datetime',columnName:'correlation'},
+          correlation:{type:'float',columnName:'correlation'},
           pctAcc:{type:'float',columnName:'pctAcc'},
           acc:{type:'integer',columnName:'acc',primaryKey: true}
 

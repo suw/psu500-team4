@@ -13,7 +13,6 @@ tableName:'data_gui_graph',
 autoCreatedAt: false,
 autoUpdatedAt: false,
     attributes: {
-        updatedAt:{type:'datetime',columnName:'updatedAt'},
         timestamp:{type:'datetime',columnName:'timestamp'},
         date:{type:'datetime',columnName:'date',default:'CURRENT_TIMESTAMP'},
         symbol:{type:'text',columnName:'symbol'},
@@ -25,8 +24,5 @@ autoUpdatedAt: false,
         correlation:{type:'datetime',columnName:'correlation'},
         pctAcc:{type:'float',columnName:'pctAcc'},
         acc:{type:'integer',columnName:'acc',primaryKey: true}
-
-
-
     }
 };
