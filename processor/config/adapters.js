@@ -14,15 +14,7 @@
 
 module.exports.adapters = {
 
-
-    mongo: {
-        module  : 'sails-mongo',
-        host     : 'localhost',
-        port     : 27017,
-        user     : '',
-        password : '',
-        database : 'local'
-    },
+'default':'mysql',
 
     mysql: {
         module  : 'sails-mysql',
@@ -31,12 +23,22 @@ module.exports.adapters = {
         user     : 'fivninni_apikids',
         password : 'makeitw0rk',
         database : 'fivninni_sweng500',
-        pool: false
+        pool: false,
+
 
 
     // OR (explicit sets take precedence)
     //module   : 'sails-mysql',
     //url      : 'mysql2://USER:PASSWORD@HOST:PORT/DATABASENAME'
+  },
+
+    mongo: {
+        module  : 'sails-mongo',
+        host     : 'localhost',
+        port     : 27017,
+        user     : '',
+        password : '',
+        database : 'local'
     }
 
 };

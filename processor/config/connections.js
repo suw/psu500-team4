@@ -14,6 +14,21 @@
 
 module.exports.connections = {
 
+  'default':'mysql',
+
+  mysql: {
+      adapter  : 'sails-mysql',
+      host     : 'host320.hostmonster.com',
+      port     :  3306,
+      user     : 'fivninni_apikids',
+      password : 'makeitw0rk',
+      database : 'fivninni_sweng500'
+
+  // OR (explicit sets take precedence)
+  //module   : 'sails-mysql',
+  //url      : 'mysql2://USER:PASSWORD@HOST:PORT/DATABASENAME'
+},
+
     mongo: {
         adapter  : 'sails-mongo',
         host     : 'localhost',
@@ -21,19 +36,8 @@ module.exports.connections = {
         user     : '',
         password : '',
         database : 'local'
-    },
-
-    mysql: {
-        adapter  : 'sails-mysql',
-        host     : 'host320.hostmonster.com',
-        port     :  3306,
-        user     : 'fivninni_apikids',
-        password : 'makeitw0rk',
-        database : 'fivninni_sweng500'
-
-    // OR (explicit sets take precedence)
-    //module   : 'sails-mysql',
-    //url      : 'mysql2://USER:PASSWORD@HOST:PORT/DATABASENAME'
     }
+
+
 
 };
