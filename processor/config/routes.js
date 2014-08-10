@@ -61,13 +61,13 @@ module.exports.routes = {
 
   'post /analyze': 'SentimentController.create',
 
-  'get /sentiment': 'Data_gui_graph.find',
+  'get /data_gui_graph': 'Data_gui_graph.find',
 
-  'put /sentiment': 'Data_gui_graph.update',
+  'put /data_gui_graph': 'Data_gui_graph.update',
 
-  'post /sentiment':'Data_gui_graph.create',
+  'post /data_gui_graph':'Data_gui_graph.create',
 
-  'delete /sentiment': 'Data_gui_graph.destroy',
+  'delete /data_gui_graph': 'Data_gui_graph.destroy',
   //***********************************************************************
   //***********************************************************************
 
