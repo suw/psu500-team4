@@ -62,13 +62,13 @@ function(
     // Send off the request and handle the response data
     articleRequested.$save(
       function(response) {
-        if (response.type == 'negative' || response.type == 'positive') {
+        if (response.sentiment.results.type == 'negative' || response.sentiment.results.type == 'positive') {
           $scope.sendingRequest = false;
           $scope.requestSuccess = true;
           $scope.requestUrl = '';
-          $scope.responseData = response;
-          $scope.responseType = response.type;
-          $scope.responseScore = response.score;
+          $scope.responseData = response.sentiment.results;
+          $scope.responseType = response.sentiment.results.type;
+          $scope.responseScore = response.sentiment.results.score;
         } else {
           $scope.apiError = true;
         }
@@ -266,9 +266,9 @@ function(
     // Send off the request and handle the response data
     articleRequested.$save(
       function(response) {
-        if (response.sentiment.type == 'negative' || response.sentiment.type == 'positive') {
-          $scope.data.response.docs[index].sentiment = response.sentiment.type;
-          $scope.data.response.docs[index].score = response.sentiment.score;
+        if (response.sentiment.results..type == 'negative' || response.sentiment.results..type == 'positive') {
+          $scope.data.response.docs[index].sentiment = response.sentiment.results..type;
+          $scope.data.response.docs[index].score = response.sentiment.results..score;
           angular.element('#collapse-'+index).collapse('show');
         } else {
           $scope.dataGrabError = true;
@@ -358,9 +358,9 @@ function(
     articleRequested.$save(
       function(response) {
 
-        if (response.sentiment.type == 'negative' || response.sentiment.type == 'positive') {
-          $scope.feeds[index].sentiment = response.sentiment.type;
-          $scope.feeds[index].score = response.sentiment.score;
+        if (response.sentiment.results..type == 'negative' || response.sentiment.results..type == 'positive') {
+          $scope.feeds[index].sentiment = response.sentiment.results..type;
+          $scope.feeds[index].score = response.sentiment.results..score;
           angular.element('#collapse-'+index).collapse('show');
         } else {
           $scope.dataGrabError = true;
