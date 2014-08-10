@@ -38,19 +38,19 @@ foreach ($symbols as $symbol) {
     );
 }
 
-$columns = ['price', 'forecast', 'f1', 'f2', 'f3'];
+$columns = array('price', 'forecast', 'f1', 'f2', 'f3');
 
 $symbol = $_GET['symbol'];
 $column = $_GET['column'];
 
 if (!in_array($symbol, $symbols)) {
-    http_response_code(400);
+    header('HTTP/1.1 400 Bad Request', true, 400);
     echo "Symbol not found";
     exit;
 }
 
 if (!in_array($column, $columns)) {
-    http_response_code(400);
+    header('HTTP/1.1 400 Bad Request', true, 400);
     echo "Column not found";
     exit;
 }
