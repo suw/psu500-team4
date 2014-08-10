@@ -59,7 +59,7 @@ module.exports.routes = {
 
   'delete /main': 'MainController.destroy',
 
-  'post /analyze': 'SentimentController.create'
+  'post /analyze': 'SentimentController.create',
 
   'get /sentiment': 'Data_gui_graph.find',
 

@@ -266,9 +266,9 @@ function(
     // Send off the request and handle the response data
     articleRequested.$save(
       function(response) {
-        if (response.sentiment.results..type == 'negative' || response.sentiment.results..type == 'positive') {
-          $scope.data.response.docs[index].sentiment = response.sentiment.results..type;
-          $scope.data.response.docs[index].score = response.sentiment.results..score;
+        if (response.sentiment.results.type == 'negative' || response.sentiment.results.type == 'positive') {
+          $scope.data.response.docs[index].sentiment = response.sentiment.results.type;
+          $scope.data.response.docs[index].score = response.sentiment.results.score;
           angular.element('#collapse-'+index).collapse('show');
         } else {
           $scope.dataGrabError = true;
@@ -358,9 +358,9 @@ function(
     articleRequested.$save(
       function(response) {
 
-        if (response.sentiment.results..type == 'negative' || response.sentiment.results..type == 'positive') {
-          $scope.feeds[index].sentiment = response.sentiment.results..type;
-          $scope.feeds[index].score = response.sentiment.results..score;
+        if (response.sentiment.results.type == 'negative' || response.sentiment.results.type == 'positive') {
+          $scope.feeds[index].sentiment = response.sentiment.results.type;
+          $scope.feeds[index].score = response.sentiment.results.score;
           angular.element('#collapse-'+index).collapse('show');
         } else {
           $scope.dataGrabError = true;
