@@ -12,7 +12,7 @@ $link = mysqli_connect("host320.hostmonster.com","fivninni_apikids","makeitw0rk"
  * Logic:
  *  For each symbol, generate one file for each column
  */
-$symbols = [
+$symbols = array(
     'JPM',
     'MS',
     'C',
@@ -26,10 +26,10 @@ $symbols = [
     'GM',
     'GS',
     'HSBC'
-];
+);
 
 
-$symbolOutArray = [];
+$symbolOutArray = array();
 
 foreach ($symbols as $symbol) {
     $symbolOutArray[] = array(
@@ -59,7 +59,7 @@ $symbols = array_map('strtolower', $symbols);
 
 
 // Initialize (VAROOOOMMMMM)
-$data = [];
+$data = array();
 
 // Get data
 $query = "
@@ -90,7 +90,7 @@ echo '[';
 
 // Process data rows
 foreach ($data as $row) {
-    $output = [];
+    $output = array();
     $rowCount++;
     echo '[';
 
