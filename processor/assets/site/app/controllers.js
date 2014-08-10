@@ -131,7 +131,7 @@ function(
   var dayPrice = 0;
 
   $.each(names, function(i, name) {
-    $.getJSON('/site/php-data/db_live.php?symbol=' + symbol.toUpperCase() + '&column='+ name.toLowerCase(), function(data) {
+    $.getJSON('http://rant.suwdo.com/data/db_live.php?symbol=' + symbol.toUpperCase() + '&column='+ name.toLowerCase(), function(data) {
 
       if (name != 'F3') {
         dataSeriesOptions[i] = {
