@@ -102,19 +102,19 @@ function(
 
   // Symbol : name
   $scope.allSymbols = [
-      {"symbol":"c","name":"C - Citigroup"},
-      {"symbol":"bcs","name":"BCS - Barclays"},
-      {"symbol":"bac","name":"BAC - Bank of America"},
-      {"symbol":"ubs","name":"UBS - UBS"},
       {"symbol":"aapl","name":"AAPL - Apple"},
+      {"symbol":"bac","name":"BAC - Bank of America"},
+      {"symbol":"bcs","name":"BCS - Barclays"},
+      {"symbol":"c","name":"C - Citigroup"},
       {"symbol":"db","name":"DB - Deutsche Bank"},
       {"symbol":"fb","name":"FB - Facebook"},
-      {"symbol":"goog","name":"GOOG - Google"},
       {"symbol":"gm","name":"GM - General Motors"},
+      {"symbol":"goog","name":"GOOG - Google"},
       {"symbol":"gs","name":"GS - Goldman Sachs"},
+      {"symbol":"hsbc","name":"HSBC - HSBC"},
       {"symbol":"jpm","name":"JPM - JPMorgan Chase"},
       {"symbol":"ms","name":"MS - Morgan Stanley"},
-      {"symbol":"hsbc","name":"HSBC - HSBC"}
+      {"symbol":"ubs","name":"UBS - UBS"}
     ];
 
   /**
