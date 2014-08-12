@@ -94,16 +94,14 @@ function(
   $routeParams
 ) {
 
-  // Get symbol from the route. Default to JPM
-  var symbol = ('symbol' in $routeParams) ? $routeParams.symbol : 'jpm';
+  // Get symbol from the route. Default to C
+  var symbol = ('symbol' in $routeParams) ? $routeParams.symbol : 'c';
   $scope.symbol = symbol;
   $scope.forecastedChange;
   $scope.lastUpdatedDate = new Date();
 
   // Symbol : name
   $scope.allSymbols = [
-      {"symbol":"jpm","name":"JPM - JPMorgan Chase"},
-      {"symbol":"ms","name":"MS - Morgan Stanley"},
       {"symbol":"c","name":"C - Citigroup"},
       {"symbol":"bcs","name":"BCS - Barclays"},
       {"symbol":"bac","name":"BAC - Bank of America"},
@@ -114,6 +112,8 @@ function(
       {"symbol":"goog","name":"GOOG - Google"},
       {"symbol":"gm","name":"GM - General Motors"},
       {"symbol":"gs","name":"GS - Goldman Sachs"},
+      {"symbol":"jpm","name":"JPM - JPMorgan Chase"},
+      {"symbol":"ms","name":"MS - Morgan Stanley"},
       {"symbol":"hsbc","name":"HSBC - HSBC"}
     ];
 
@@ -123,7 +123,7 @@ function(
   var dataSeriesOptions = [],
   yAxisOptions = [],
   seriesCounter = 0,
-  names = ['Price', 'Forecast', "F1", "F2", "F3"],
+  names = ['Price', 'Forecast', "F3"],
   colors = Highcharts.getOptions().colors;
   $scope.isLoading = true;
 
