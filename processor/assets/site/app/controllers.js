@@ -154,7 +154,7 @@ function(
       }
 
       if (name == 'Forecast') {
-        dayForecast = data[0][1];
+        dayForecast = data[data.length-1][1];
       }
 
 
