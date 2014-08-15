@@ -1,0 +1,73 @@
+11/08/14 | 09:34:55 :: http://www.bloomberg.com/news/2014-08-11/gross-reduces-u-s-government-related-debt-in-july.html ||MySql.Data.MySqlClient.MySqlException (0x80004005): User fivninni_apimax already has more than 'max_user_connections' active connections
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Authenticate411()
+   at MySql.Data.MySqlClient.NativeDriver.Authenticate()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 103
+11/08/14 | 10:02:38 :: http://www.bloomberg.com/news/2014-08-11/germany-lufthansa-group-july-traffic-figures-table-.html ||System.ArgumentException: Column 'score' does not belong to table entity.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 113
+11/08/14 | 10:05:09 :: http://www.bloomberg.com/news/2014-08-11/gatwick-airport-july-traffic-figures-summary-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+11/08/14 | 10:08:38 :: http://www.bloomberg.com/news/2014-08-11/malaysia-palm-oil-industry-performance-for-july-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+11/08/14 | 10:27:50 :: http://www.bloomberg.com/news/2014-08-11/germany-lufthansa-group-july-traffic-figures-table-.html ||System.ArgumentException: Column 'score' does not belong to table entity.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 113
+11/08/14 | 10:27:55 :: http://www.bloomberg.com/news/2014-08-11/gatwick-airport-july-traffic-figures-summary-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+11/08/14 | 10:28:18 :: http://www.bloomberg.com/news/2014-08-11/malaysia-palm-oil-industry-performance-for-july-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+12/08/14 | 07:24:02 :: http://www.bloomberg.com/news/2014-08-11/germany-lufthansa-group-july-traffic-figures-table-.html ||System.ArgumentException: Column 'score' does not belong to table entity.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 113
+12/08/14 | 07:24:06 :: http://www.bloomberg.com/news/2014-08-11/gatwick-airport-july-traffic-figures-summary-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+12/08/14 | 07:24:09 :: http://www.bloomberg.com/news/2014-08-11/malaysia-palm-oil-industry-performance-for-july-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+12/08/14 | 07:58:38 :: http://www.bloomberg.com/news/2014-08-11/germany-lufthansa-group-july-traffic-figures-table-.html ||System.ArgumentException: Column 'score' does not belong to table entity.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 113
+12/08/14 | 07:58:39 :: http://www.bloomberg.com/news/2014-08-11/gatwick-airport-july-traffic-figures-summary-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+12/08/14 | 07:58:41 :: http://www.bloomberg.com/news/2014-08-11/malaysia-palm-oil-industry-performance-for-july-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+12/08/14 | 08:08:06 :: http://www.bloomberg.com/news/2014-08-12/world-cup-finalist-argentina-hires-ex-barcelona-coach-martino.html ||System.ArgumentException: Column 'score' does not belong to table entity.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 113
+12/08/14 | 08:11:51 :: http://www.bloomberg.com/news/2014-08-12/usda-boxed-beef-cutout-midday-prices-for-august-12-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+12/08/14 | 08:46:51 :: http://www.bloomberg.com/news/2014-08-12/world-cup-finalist-argentina-hires-ex-barcelona-coach-martino.html ||System.ArgumentException: Column 'score' does not belong to table entity.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 113
+12/08/14 | 08:47:28 :: http://www.bloomberg.com/news/2014-08-12/usda-boxed-beef-cutout-midday-prices-for-august-12-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+12/08/14 | 08:52:50 :: http://www.bloomberg.com/news/2014-08-12/world-cup-finalist-argentina-hires-ex-barcelona-coach-martino.html ||System.ArgumentException: Column 'score' does not belong to table entity.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 113
+12/08/14 | 08:53:19 :: http://www.bloomberg.com/news/2014-08-12/usda-boxed-beef-cutout-midday-prices-for-august-12-table-.html ||System.IndexOutOfRangeException: Cannot find table 2.
+   at System.Data.DataTableCollection.get_Item(Int32 index)
+   at nlp_test1.SentimentToDB.ProcessUrl(String url, DateTime date, String source, String title) in c:\Users\ML\Documents\Visual Studio 2012\Projects\nlp-test1\nlp-test1\SentimentToDB.cs:line 93
+08/12/14 | 09:27:45 :: Historical.GetLinks() : 

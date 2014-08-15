@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="nlp_test1.DailyCalcs" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAAAAAQCAAAAACAACAIAAKQAAQAAQACAgQBAAAgAA=</HashCode>
+      <FileName>DailyCalcs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.Historical" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="nlp_test1.Historical.linkDets" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Historical.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>4BAYBGAAA2cBFBBCEBCIEjICpAiMAAAEQBCAAQjSyDE=</HashCode>
+      <FileName>Historical.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.MainWindow" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAAACAAAgAAAACAAQACAAAAIAAAAASAAACAAAA=</HashCode>
+      <FileName>MainWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.Program" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.RunItLive" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EUAABCAQBCKBABACBACAAgoSiAg0Ag0ACAgQCEBgIKE=</HashCode>
+      <FileName>RunItLive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.MyDataSet" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="nlp_test1.MyDataSet.Calcs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>RunItLive.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgDAAAAACAAAAAAAAACAAAAAAAgAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>RunItLive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.SentimentToDB" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAABDgAAAAAAAiAAAACAKAAAEAEACAQAAAAAAA=</HashCode>
+      <FileName>SentimentToDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.Properties.Resources" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAABAAAAEAAAEIAAAAAABAIAAAAAAAAAACAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="nlp_test1.PriceLoader" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQQAAEAARCAAQAACQACAAAAKQIAQAAQACAIUAAAAAgk=</HashCode>
+      <FileName>PriceLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

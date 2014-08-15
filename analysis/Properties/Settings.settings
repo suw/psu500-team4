@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="nlp_test1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Symbols" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;AAPL&lt;/string&gt;
+  &lt;string&gt;BAC&lt;/string&gt;
+  &lt;string&gt;BCS&lt;/string&gt;
+  &lt;string&gt;C&lt;/string&gt;
+  &lt;string&gt;DB&lt;/string&gt;
+  &lt;string&gt;FB&lt;/string&gt;
+  &lt;string&gt;GM&lt;/string&gt;
+  &lt;string&gt;GOOG&lt;/string&gt;
+  &lt;string&gt;GS&lt;/string&gt;
+  &lt;string&gt;HSBC&lt;/string&gt;
+  &lt;string&gt;JPM&lt;/string&gt;
+  &lt;string&gt;MS&lt;/string&gt;
+  &lt;string&gt;UBS&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="CorrelationDays" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="CorrelationLookBack" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">90</Value>
+    </Setting>
+    <Setting Name="PctRightLookBack" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">90</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
